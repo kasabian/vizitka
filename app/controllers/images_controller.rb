@@ -1,5 +1,6 @@
 # ecoding: utf-8 
 class ImagesController < ApplicationController
+  load_and_authorize_resource
   def create
    @gallery = Gallery.find(params[:gallery_id])
    @gallery.images.create(params[:image]) 

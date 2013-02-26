@@ -34,35 +34,18 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
-  <body style="background-color:white;">
+  <body style="background-color: white;">
 
-    <div class="navbar navbar-static-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <%= link_to "Vizitka", home_index_path, :class => "brand"  %> 
-          <a class="brand" href="#"></a>
-          <div class="container nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Галерея", gallery_index_path  %></li>
-              <li><%= link_to "Меню", menus_path  %></li>
-              <li><%= link_to "Настройки сайта", settings_path %></li>
-               <li><%= link_to "Выход", destroy_user_session_path %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
 
-          <div class="span9" style="margin-left:12%; margin-bottom: 150px;"><br />
+    <div class="container"><br /> <br />
+    
             <%= bootstrap_flash %><br />
+           <div style="margin:auto; width: 319px;">
             <%= yield %>
-          </div>       
-      
+           </div>   
+
+    </div> <!-- /container -->
+
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
