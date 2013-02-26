@@ -1,6 +1,6 @@
 Vizitka::Application.routes.draw do
   
-  match "/admin/users/sign_up" => "home#index"
+#   match "/admin/users/sign_up" => "home#index"
   get "home/index"
   match "/admin" => "home#admin" 
   
