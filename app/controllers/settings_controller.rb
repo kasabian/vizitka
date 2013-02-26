@@ -1,5 +1,6 @@
 # ecoding: utf-8
 class SettingsController < ApplicationController
+  load_and_authorize_resource
   layout  "admin"
   def index
     @setting = Setting.first 

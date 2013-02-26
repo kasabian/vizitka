@@ -1,4 +1,5 @@
 class GalleryController < ApplicationController
+  load_and_authorize_resource
   layout "admin"
   def index
     @gallery_catalogs = Gallery.all
