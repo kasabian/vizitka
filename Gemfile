@@ -12,6 +12,7 @@ gem 'rmagick'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'cancan'
+gem "pg"
 
 
 # Gems used only for assets and not required
