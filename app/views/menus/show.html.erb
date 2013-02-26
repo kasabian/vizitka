@@ -1,0 +1,16 @@
+
+<h3> текст: <%=@menu.name%> </h3><br /><br />
+
+<p>
+  <b>Заголовок:</b>
+  <%= @menu.title %>
+</p>
+
+<p>
+  <b>Текст:</b>
+  <%= @menu.content.html_safe %>
+</p>
+
+<br />
+<%= link_to 'Редактировать', edit_menu_path(@menu) %> |
+<%= link_to 'Назад', menus_path %>

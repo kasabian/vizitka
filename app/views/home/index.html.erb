@@ -1,0 +1,7 @@
+
+<div id="menus">
+  <script>
+   this.menusJSON=<%=@menus.to_json.html_safe -%>;
+   this.galleryJSON=<%= @gallery.to_json(:include => [:images]).html_safe -%>;
+  </script>
+</div>

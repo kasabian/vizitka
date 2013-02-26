@@ -1,0 +1,17 @@
+<br />
+<h3>Каталоги изображений </h3><br /><br />
+<table class="table">
+  <tr>
+    <td><b>Каталог</b></td>
+    <td><b>Действие</b></td>
+  </tr>
+ <%@gallery_catalogs.each do|catalog| %>
+  <tr>
+   <td style="margin-left: 300px;"> <%= catalog.ps_name%> </td>
+   <td> <%= link_to "Редактировать", gallery_path(catalog), :class => "btn btn-success"%> </td>
+  <tr>
+ <%end%>
+
+ 
+ 
+ </table> 

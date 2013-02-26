@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Vizitka</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  
+  </script>
+  </head>
+ <body> 
+  <div id = "main">
+    <div class = logo>
+    		<a href = "#index">  <img src="/images/logo.png" width="150"> </a>
+          </div>     
+    <div id="work_space">  
+	   <div id="left_side">
+          <div id = "order">
+          </div>
+          <div class="pod_left_menu">
+		    <ul>
+		      <%= render "/assets/podmenulinks"%> 
+		     </ul>
+          </div>	  
+          <div class = "left_menu_box"> 
+		    <ul class ="left_menu" >
+			<%= render "/assets/leftlinks"%>
+		    </ul>
+		  </div>	     
+		 <div class= "left_line"></div>
+	   </div>  
+	  <div id="content">
+	   
+	    
+	    <div class = "text_block" id="content_1">
+	      <h4 style = "text-align:center; color:white;">aa</h4>
+	      <p class = "content_text"> aaaa </p>
+	      
+	    </div>
+	  </div>
+	  <div id="right_side">
+	    <ul>
+		<%= render "assets/rightlinks"%>
+		  
+		</ul>		
+	  
+	   <div class= "right_line"></div>
+	  </div>
+    <div> 	
+ 
+ </div> 
+ <%= yield %>
+
+ 
+ </body>
+</html>

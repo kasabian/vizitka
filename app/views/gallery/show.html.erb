@@ -1,0 +1,37 @@
+
+<h3 style="margin:30px;"> Загрузить изображение в:<i> <%= @gallery.ps_name%></i></h3>
+ 
+ <div class="hero-unit">
+  <%= form_for([@gallery, @gallery.images.build]) do |f| %>   
+    
+         <%= f.label 'выбрать изображение (рекомендовано 750х500)' %>
+         <%= f.file_field :image, :length => 5, :required=>"required" %> 
+   
+   <div class="field">
+     <%= f.label :описание %>
+     <%= f.text_field :title , :class => "input-xlarge"%>
+   </div>
+   <div class="actions">
+     <%= f.submit "Загрузить",:class=>"btn btn-inverse " %>
+   </div>
+ <% end %>
+</div> 
+
+<table class="table table-hover">
+   <tr >
+    <td><b>Изображение</b></td>
+    <td><b>Описание</b></td>
+    <td><b>Действие</b></td>
+   </tr>
+
+<%@images.each do |image|%>
+   <tr>
+    <td><%= image_tag(image.image, :width=>"170" ,:height=>"170", :class => "img-polaroid") %> </td>
+    <td> <%= image.title %> </td>
+    <td><%= link_to 'Удалить изображение', [@gallery, image],
+     :confirm => 'Вы уверены?',
+     :method => 'delete', :class => "btn btn-danger" %></td>
+   </tr>
+       
+<%end%>
+</table>

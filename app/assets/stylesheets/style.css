@@ -1,0 +1,270 @@
+ body 
+  {
+   background-color:black;
+ }
+
+#main
+  {
+   margin-top:4.5%;
+   width:100%;
+   height:500px;
+   background:url("../images/back.jpg") repeat-x;
+ }
+ #work_space
+  {
+   margin: auto;
+   height:500px;
+   width:500px;
+ }
+ 
+ #content
+   {
+   background-color: #262626;
+   height:500px;
+   width:500px; 
+   float:left;   
+   }
+  
+  #left_side
+    {
+    background:url("../images/back.jpg") repeat-x;
+    height: 500px;
+    width: 300px;
+	float:left;
+	margin-left: -50px;
+	position: absolute;
+    border-right: solid 3px #92d050;
+    z-index:100;	
+  }
+   #right_side
+    {
+    background:url("../images/back.jpg") repeat-x;
+    height: 500px;
+    width: 300px;
+	float:left;
+	margin-left: 250px;
+	position: absolute;
+    border-left: solid 3px #92d050;	
+	z-index:100;
+  }
+  
+   #left_side  .pod_left_menu
+    {
+    height: 250px;
+    margin-right: 23px;
+    margin-top: 222px;
+    padding-top: 10px;
+    position: absolute;
+    width: 210px;
+    margin-left: -40px;
+  }
+  
+  #left_side  .pod_left_menu ul
+    {
+	color: #92D050;
+    font-size: 16px;
+    list-style: none outside none;
+    margin-right: 50px;
+    text-align: right;
+	margin-top: 25px; 
+	
+  }
+  
+  #left_side  .pod_left_menu ul li
+    {
+	color: #92D050;
+    font-family: Arial;
+    font-size: 16px;
+    list-style: none outside none;
+    margin-top: 20px;
+    text-align: right;
+  }
+    
+  
+  #right_side ul
+    {
+	list-style: none outside none;
+	float: left;
+	padding-left:30px;
+  }
+  
+  #right_side ul li:hover
+    {
+	background:url("../images/menu_back.png");
+	cursor: pointer;
+  }
+  
+  
+  #right_side .menu_list
+    {
+	height: 135px;
+    margin-top: 22px;
+    width: 300px;	
+  }
+  
+  #right_side .menu_img
+    {
+	float:left;
+    margin:12px;	
+  }
+  
+   #right_side .menu_text
+    {
+	color: #92D050;
+    font-family: Arial;
+    font-size: 16px;
+    padding-right: 35px;
+    padding-top: 40px;
+    text-align: right;
+  }
+  
+  
+   #left_side .left_menu_box
+    {
+    height: 184px;
+    margin-left: 135px;
+    margin-top: 300px;
+    padding-left: 0;
+    position: absolute;
+    width: 106px;
+  }
+  
+  #left_side .left_menu_box ul
+     {
+	color: #92D050;
+    font-family: Arial;
+    font-size: 20px;
+    list-style: none outside none;
+    margin: 0 0 0 0;
+    padding-left: 0;
+    text-align: right;
+    width: 115px;
+   }
+   
+   #left_side .left_menu_box ul li
+     {
+	 margin-top:30px; 
+   }
+   
+    #left_side .left_menu_box ul li:hover
+     { 
+     text-shadow: 0 0 12px;
+     cursor: pointer;	 
+   }
+
+   #content .text_block
+       {
+	 height: 445px;
+         margin: auto;
+         padding-top: 31px;
+         width: 480px;
+	}
+	#content .text_block img
+       {
+	    margin-left: 25px;
+    margin-top: 30px;
+	}
+	#content p
+	 {
+	  color: white;
+      font-size: 13px;
+/*       margin-top: -15px; */
+      padding-left: 20px;
+      padding-right: 20px;
+      
+	 }
+   
+    #content h3
+       {
+	   color:white;
+	   margin-top:15px;
+	   text-align: center;
+	   
+	}
+	
+	 #content h5
+       {
+	    padding-left: 20px;
+       text-shadow: 0 0 5px gray;
+         color: black;
+	}
+
+  
+  .left_line
+    {
+	background-color: #92d050;
+    height: 580px;
+    margin-left: 301px;
+    margin-top: -40px;
+    position: absolute;
+    width: 1px;
+  }
+    .right_line
+    {
+	background-color: #92d050;
+    height: 580px;
+    margin-left: -2px;
+    margin-top: -40px;
+    position: absolute;
+    width: 1px;
+  }
+  
+  .logo
+    {
+      cursor: pointer;
+      margin-left: 2%;
+      margin-top: 30px;
+      position: absolute;
+      z-index: 110;
+  }
+  
+  
+   #left_side  .pod_left_menu ul li:hover
+    {
+	 text-shadow: 0 0 12px;
+         cursor: pointer; 
+	}
+	
+ #left_side a
+  {
+     color:#92D050;
+     text-decoration: none;
+  }
+  
+   #left_side a:hover
+  {
+     background:none;
+  }
+  
+  a:hover
+   {
+     text-decoration:none;
+   }
+
+  .current_link
+   {
+    text-shadow: 0 0 12px;
+    cursor: pointer;
+   }
+   
+   a:focus {
+outline: none;
+}
+
+  a:hover
+  {
+    background: none;
+  }
+  
+  #order
+  {
+    color: #92D050;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 160px;
+    margin-top: 13px;
+    position: absolute;
+    width: 130px;
+    text-shadow: 1px 2px 6px black;
+    
+  }
