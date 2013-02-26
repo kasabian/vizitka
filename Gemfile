@@ -5,14 +5,15 @@ gem 'rails', '3.2.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+  gem 'therubyracer', :platform => :ruby
+  gem 'pg'
 gem 'rails-backbone'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'cancan'
-gem "pg"
+
 
 
 # Gems used only for assets and not required
