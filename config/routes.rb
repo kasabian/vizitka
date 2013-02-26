@@ -1,8 +1,11 @@
 Vizitka::Application.routes.draw do
+  
+  match "/admin/users/sign_up" => "home#index"
   get "home/index"
-  match "/admin" => "gallery#index"
+  match "/admin" => "home#admin" 
   
   scope "/admin" do
+   devise_for :users, :controllers => { :sessions => 'users' }
    resources :menus 
    resources :settings, :only => [:index, :update] 
    resources :gallery, :only => [:index, :show] do

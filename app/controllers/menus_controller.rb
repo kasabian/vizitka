@@ -1,5 +1,6 @@
 # ecoding: utf-8 
 class MenusController < ApplicationController
+  load_and_authorize_resource
   layout "admin"
   # GET /menus
   # GET /menus.json
