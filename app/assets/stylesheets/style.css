@@ -4,11 +4,11 @@
  }
 
 #main
-  {
+  { 
    margin-top:4.5%;
    width:100%;
    height:500px;
-   background:#222120;
+   background: url("/images/back.jpg") repeat-x scroll 0 0 transparent;
  }
  #work_space
   {
