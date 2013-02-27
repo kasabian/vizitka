@@ -33,7 +33,7 @@
     float:left;
     margin-left: -50px;
     position: absolute;
-    border-right: solid 3px #92d050;
+/*     border-right: solid 3px #92d050; */
     z-index:100;	
   }
    #right_side
@@ -44,7 +44,7 @@
 	float:left;
 	margin-left: 250px;
 	position: absolute;
-    border-left: solid 3px #92d050;	
+/*     border-left: solid 3px #92d050;	 */
 	z-index:100;
   }
   
@@ -194,7 +194,7 @@
     {
 	background-color: #92d050;
     height: 580px;
-    margin-left: 301px;
+    margin-left: 300px;
     margin-top: -40px;
     position: absolute;
     width: 1px;
@@ -203,7 +203,7 @@
     {
 	background-color: #92d050;
     height: 580px;
-    margin-left: -2px;
+    margin-left: 0px;
     margin-top: -40px;
     position: absolute;
     width: 1px;
