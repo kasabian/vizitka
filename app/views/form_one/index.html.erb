@@ -1,0 +1,67 @@
+<h4>Бланк заказа №1</h4>
+<p>(предварительная заявка)</p><br />
+
+<h3>Контактная информация</h3>
+<%= form_for(@customer, :url => form_one_index_path, :method => "post") do |f| %>
+
+    <div class="field">
+      <%= f.label 'Ваше имя:' %>
+      <%= f.text_field :name , :placeholder=> "Дима" %>
+    </div> 
+    
+    <div class="field">
+      <%= f.label 'Адрес объекта:' %>
+      <%= f.text_field :address , :placeholder=> "пр. Ленина 168 кв. 2" %>
+    </div>
+    
+    
+    <div class="field">
+      <%= f.label 'Короткое название:' %>
+      <%= f.text_field :short_title , :placeholder=> "Название" %>
+    </div> 
+
+    <h3> Общие данные </h3>
+    
+     <div class="field">
+      <%= f.label 'Общая площадь обькта:' %>
+      <%= f.text_field :total_area , :placeholder=> "180" %> кв. м.
+    </div> 
+    
+    <div class="field">
+      <%= f.label 'Если разрабатываеться не вся площадь, укажите проектируемую:' %>
+      <%= f.text_field :design_area , :placeholder=> "180" %> кв. м.
+    </div> 
+    
+    
+    <h3> Форма и цвет </h3>
+     <p>цвета</p>
+     <%Color.all.each do |color|%>   
+      <%= check_box_tag("color_#{color.id}",color.id) %>
+      <%= color.name  %>
+     <%end%>
+    <br /><br />
+ 
+ 
+    <p>формы</p>
+     <%Form.all.each do |form|%>   
+      <%= check_box_tag("form_#{form.id}",form.id) %>
+      <%= form.name  %>
+    <%end%>
+   <br /><br />
+
+   <p>Материалы</p>
+    <%Material.all.each do |material|%>   
+     <%= check_box_tag("material_#{material.id}",material.id) %>
+     <%= material.name  %>
+    <%end%>
+   <br /><br />
+   
+   
+   <div class="field">
+      <%= f.label 'Особые пожилания:' %>
+      <%= f.text_area :wishes_color , :placeholder=> "Применить в интерьере с позолотой или серебром" %>
+    </div> 
+    
+<%= f.submit "Применить" %>
+<%end%>
+

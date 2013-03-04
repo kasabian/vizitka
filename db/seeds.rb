@@ -23,4 +23,25 @@
   Gallery.create("name"=>"industrial","ps_name" =>"Промышленный дизайн")
 
   Setting.create()
-
+  
+  
+#   colors
+  
+  
+  Color.create(:name => "Светлые тона")
+  Color.create(:name => "Средняя Гамма")
+  Color.create(:name => "Темные тона")
+  Color.create(:name => "Контраст")
+  Color.create(:name => "Не уверен")
+  
+# forms
+  
+  Form.create(:name => "Массивные, основательные формы")
+  Form.create(:name => "Лёгкие, воздушные конструктивы")
+  Form.create(:name => "Не уверен")
+  
+# materials
+  
+  Material.create(:name => "Только натуральные, экологические материалы")
+  Material.create(:name => "В зависимости от помещений")
+  Material.create(:name => "Не уверен")

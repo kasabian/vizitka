@@ -1,7 +1,9 @@
 Vizitka::Application.routes.draw do
   
+
+  resources :form_one, :only => [:index, :create]
 #   match "/admin/users/sign_up" => "home#index"
-  get "home/index"
+  get "home/index" 
   match "/admin" => "home#admin" 
   
   scope "/admin" do

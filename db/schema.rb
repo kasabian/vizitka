@@ -11,7 +11,45 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130226165552) do
+ActiveRecord::Schema.define(:version => 20130302173612) do
+
+  create_table "colors", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "colors_customers", :id => false, :force => true do |t|
+    t.integer "color_id"
+    t.integer "customer_id"
+  end
+
+  create_table "customers", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "short_title"
+    t.integer  "total_area"
+    t.integer  "design_area"
+    t.text     "wishes_color"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "customers_forms", :id => false, :force => true do |t|
+    t.integer "form_id"
+    t.integer "customer_id"
+  end
+
+  create_table "customers_materials", :id => false, :force => true do |t|
+    t.integer "material_id"
+    t.integer "customer_id"
+  end
+
+  create_table "forms", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "galleries", :force => true do |t|
     t.string   "name"
@@ -28,6 +66,12 @@ ActiveRecord::Schema.define(:version => 20130226165552) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "gallery_id"
+  end
+
+  create_table "materials", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "menus", :force => true do |t|
