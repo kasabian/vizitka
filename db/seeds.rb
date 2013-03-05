@@ -45,3 +45,43 @@
   Material.create(:name => "Только натуральные, экологические материалы")
   Material.create(:name => "В зависимости от помещений")
   Material.create(:name => "Не уверен")
+  
+  
+#floors
+  
+  Floor.create(:name => "Многоэтажное")
+  Floor.create(:name => "Одноэтажное")
+  Floor.create(:name => "Цокольный уровень")
+  Floor.create(:name => "Подземный уровень")
+  
+  
+  #engineerings
+  
+  Engineering.create(:name => "Водопровод, канализация")
+  Engineering.create(:name => "Кондиционирование")
+  Engineering.create(:name => "Отопление")
+  Engineering.create(:name => "Электрические сети")
+  Engineering.create(:name => "Слаботочные сети")
+  
+  
+  #epc (example picture checks)
+  
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  
+    #epcbad (example picture checks bad)
+  
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")

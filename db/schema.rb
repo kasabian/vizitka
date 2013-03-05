@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130302173612) do
+ActiveRecord::Schema.define(:version => 20130305162051) do
 
   create_table "colors", :force => true do |t|
     t.string   "name"
@@ -31,8 +31,19 @@ ActiveRecord::Schema.define(:version => 20130302173612) do
     t.integer  "total_area"
     t.integer  "design_area"
     t.text     "wishes_color"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "tel1"
+    t.string   "tel2"
+    t.string   "mail1"
+    t.string   "mail2"
+    t.integer  "floors"
+    t.integer  "curent_floor"
+    t.integer  "personal_count"
+    t.string   "personal_type"
+    t.integer  "guest_max"
+    t.integer  "guest_night"
+    t.string   "guest_type"
   end
 
   create_table "customers_forms", :id => false, :force => true do |t|
@@ -45,11 +56,83 @@ ActiveRecord::Schema.define(:version => 20130302173612) do
     t.integer "customer_id"
   end
 
+  create_table "engineerings", :force => true do |t|
+    t.string   "name"
+    t.integer  "customer_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "engineerings", ["customer_id"], :name => "index_engineerings_on_customer_id"
+
+  create_table "epcbads", :force => true do |t|
+    t.string   "image"
+    t.string   "name"
+    t.integer  "customer_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "epcbads", ["customer_id"], :name => "index_epcbads_on_customer_id"
+
+  create_table "epcs", :force => true do |t|
+    t.string   "image"
+    t.string   "name"
+    t.integer  "customer_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "epcs", ["customer_id"], :name => "index_epcs_on_customer_id"
+
+  create_table "examplepics", :force => true do |t|
+    t.string   "image"
+    t.text     "comment"
+    t.string   "link"
+    t.integer  "customer_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "examplepics", ["customer_id"], :name => "index_examplepics_on_customer_id"
+
+  create_table "families", :force => true do |t|
+    t.string   "name"
+    t.string   "male"
+    t.string   "status"
+    t.integer  "age"
+    t.text     "comment"
+    t.integer  "customer_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "families", ["customer_id"], :name => "index_families_on_customer_id"
+
+  create_table "floors", :force => true do |t|
+    t.string   "name"
+    t.integer  "customer_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "floors", ["customer_id"], :name => "index_floors_on_customer_id"
+
   create_table "forms", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "forms1_personals", :force => true do |t|
+    t.integer  "count"
+    t.string   "type"
+    t.integer  "customer_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "forms1_personals", ["customer_id"], :name => "index_forms1_personals_on_customer_id"
 
   create_table "galleries", :force => true do |t|
     t.string   "name"

@@ -2,11 +2,21 @@
 <p>(предварительная заявка)</p><br />
 
 <h3>Контактная информация</h3>
-<%= form_for(@customer, :url => form_one_index_path, :method => "post") do |f| %>
+<%= nested_form_for(@customer, :url => form_one_index_path, :method => "post") do |f| %>
 
     <div class="field">
       <%= f.label 'Ваше имя:' %>
       <%= f.text_field :name , :placeholder=> "Дима" %>
+    </div> 
+     <div class="field">
+      <%= f.label 'Способ связи 1:' %>
+      <%= f.text_field :tel1 , :placeholder=> "телефон" %>
+      <%= f.text_field :mail1 , :placeholder=> "почта" %>
+    </div> 
+     <div class="field">
+      <%= f.label 'Способ связи 2:' %>
+      <%= f.text_field :tel2 , :placeholder=> "телефон" %>
+      <%= f.text_field :mail2 , :placeholder=> "почта" %>
     </div> 
     
     <div class="field">
@@ -21,15 +31,27 @@
     </div> 
 
     <h3> Общие данные </h3>
+       <p>Укажите тип здания в котором располагаються помещения:</p>
+        <%Floor.all.each do |floor|%>   
+         <%= check_box_tag("floor_#{floor.id}",floor.id) %>
+         <%= floor.name  %>
+        <%end%>
+    <br /><br />
+    
+    
+     <div class="field">
+      <%= f.label 'На каком этаже объект:' %>
+      <%= f.text_field :curent_floor , :placeholder=> "12" , :class =>"number" %> 
+    </div> 
     
      <div class="field">
       <%= f.label 'Общая площадь обькта:' %>
-      <%= f.text_field :total_area , :placeholder=> "180" %> кв. м.
+      <%= f.text_field :total_area , :placeholder=> "180", :class =>"number"%> кв. м.
     </div> 
     
     <div class="field">
       <%= f.label 'Если разрабатываеться не вся площадь, укажите проектируемую:' %>
-      <%= f.text_field :design_area , :placeholder=> "180" %> кв. м.
+      <%= f.text_field :design_area , :placeholder=> "180", :class =>"number" %> кв. м.
     </div> 
     
     
@@ -62,6 +84,92 @@
       <%= f.text_area :wishes_color , :placeholder=> "Применить в интерьере с позолотой или серебром" %>
     </div> 
     
-<%= f.submit "Применить" %>
+ 
+   <h3> Примеры решений</h3>
+   <p>Укажите пожалуйста решения которые вам нравяться </p>
+  <div style = "min-height:300px;"> 
+    <%Epc.all.each do |epc|%>
+    <div style = "float:left; margin:5px;">
+     <%= image_tag(epc.image,:width => "150") %> <br />
+     <%= check_box_tag("epc_#{epc.id}",epc.id) %>
+    </div> 
+    <%end%>
+  </div> 
+   
+   <p>Укажите пожалуйста решения которые вам не нравяться </p>
+  <div style = "min-height:300px;"> 
+    <%Epcbad.all.each do |epcbad|%>
+    <div style = "float:left; margin:5px;">
+     <%= image_tag(epcbad.image,:width => "150") %> <br />
+     <%= check_box_tag("epcbad_#{epcbad.id}",epcbad.id) %>
+    </div> 
+    <%end%>
+  </div> 
+  
+  
+   <%= f.fields_for :examplepics do |pic| %>
+      <%= pic.label 'выбрать изображение' %>
+      <%= pic.file_field :image, :length => 5, :required=>"required" %> <br />
+      
+      <%= pic.label 'Ваш комментарий к картинке' %>
+      <%= pic.text_field :comment %>
+      
+      <%= pic.label 'www.' %>
+      <%= pic.text_field :link %>
+      <%= pic.link_to_remove "Удалить" %>
+   <% end %>
+  <p><%= f.link_to_add "+ Добавить", :examplepics %></p>
+   
+    
+   <h3> Инженерные сети</h3>
+      <p>Выберите инженерные сети, которые необходимо спроектировать</p>
+     <%Engineering.all.each do |e|%>   
+      <%= check_box_tag("engineering_#{e.id}",e.id) %>
+      <%= e.name  %><br />
+    <%end%>
+   <br /><br />
+   
+   <h3>Жилое, частные апартаменты или коттедж Назначение помещений и количество людей</h3>
+    Семья из <input type= "texte" name="family_count" value = "" placeholder="2" class = "family_count"> человек <br />
+    
+    <%= f.fields_for :familys do |family| %>
+     <div class = "family_filds">
+      <%= family.label 'Имя' %>
+      <%= family.text_field :name %>
+      
+      <%= family.label 'семейный статус' %>
+      <%= family.text_field :status %>
+      
+      <%= family.label 'Возраст' %>
+      <%= family.text_field :age , :placeholder=> "25" , :class =>"number" %>
+      
+      <%= family.label 'Особые примечания' %>
+      <%= family.text_field :comment %> 
+     </div>  
+   <% end %>
+  
+  <p><%= f.link_to_add "+ Добавить", :familys, :class=>"family_add" %></p> 
+    
+    
+    
+  <h3>Обслуживающий персонал</h3>  
+     
+        <%= f.label 'Обслуживающий персонал' %>
+        <%= f.text_field :personal_count , :placeholder=> "2" , :class =>"number" %>
+        
+        <%= f.label 'Тип' %><br />
+        <%= f.select( :personal_type, options_for_select([["приходящий", 'comming'], ["проживающий совместно", 'living']])) %>
+ 
+   <h3> Гости в моём доме: </h3>
+      <%= f.label 'Тип' %><br />
+      <%= f.select( :guest_type, options_for_select([["очень часто", 'very_often'], ["изредка", 'occasionally'], ["нокогда", 'never']])) %>
+  
+       <%= f.label 'Максимальное количество гостей одновременно:' %>
+       <%= f.text_field :guest_max , :placeholder=> "10" , :class =>"number" %>
+       
+        <%= f.label 'Из них могут остаться с ночевкой:' %>
+       <%= f.text_field :guest_night , :placeholder=> "4" , :class =>"number" %>
+  
+<br /><%= f.submit "Применить" %>
 <%end%>
 

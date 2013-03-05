@@ -65,6 +65,7 @@ GEM
     mime-types (1.21)
     multi_json (1.6.1)
     mysql2 (0.3.11)
+    nested_form (0.3.1)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -133,6 +134,7 @@ DEPENDENCIES
   devise
   jquery-rails
   mysql2
+  nested_form
   rails (= 3.2.9)
   rails-backbone
   rmagick
