@@ -23,4 +23,65 @@
   Gallery.create("name"=>"industrial","ps_name" =>"Промышленный дизайн")
 
   Setting.create()
-
+  
+  
+#   colors
+  
+  
+  Color.create(:name => "Светлые тона")
+  Color.create(:name => "Средняя Гамма")
+  Color.create(:name => "Темные тона")
+  Color.create(:name => "Контраст")
+  Color.create(:name => "Не уверен")
+  
+# forms
+  
+  Form.create(:name => "Массивные, основательные формы")
+  Form.create(:name => "Лёгкие, воздушные конструктивы")
+  Form.create(:name => "Не уверен")
+  
+# materials
+  
+  Material.create(:name => "Только натуральные, экологические материалы")
+  Material.create(:name => "В зависимости от помещений")
+  Material.create(:name => "Не уверен")
+  
+  
+#floors
+  
+  Floor.create(:name => "Многоэтажное")
+  Floor.create(:name => "Одноэтажное")
+  Floor.create(:name => "Цокольный уровень")
+  Floor.create(:name => "Подземный уровень")
+  
+  
+  #engineerings
+  
+  Engineering.create(:name => "Водопровод, канализация")
+  Engineering.create(:name => "Кондиционирование")
+  Engineering.create(:name => "Отопление")
+  Engineering.create(:name => "Электрические сети")
+  Engineering.create(:name => "Слаботочные сети")
+  
+  
+  #epc (example picture checks)
+  
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  
+    #epcbad (example picture checks bad)
+  
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
