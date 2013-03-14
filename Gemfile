@@ -6,9 +6,9 @@ gem 'rails', '3.2.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-#  gem 'pg'
+  gem 'pg'
 #    gem 'sqlite3'
-   gem 'mysql2'
+#    gem 'mysql2'
 gem 'rails-backbone'
 gem 'carrierwave'
 gem 'rmagick'
