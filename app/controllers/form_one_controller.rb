@@ -1,5 +1,5 @@
 class FormOneController < ApplicationController
-  layout "admin"
+  layout "form"
   
   def index
     @customer = Customer.new 
@@ -10,7 +10,6 @@ class FormOneController < ApplicationController
   end
 
   def create
-    puts "Privet v terminale"
     @customer = Customer.new(params[:customer])
     @customer.check_fild params, @customer.colors, Color, "color_"    
     @customer.check_fild params, @customer.forms, Form, "form_"
