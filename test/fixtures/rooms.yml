@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  room_name: MyString
+  room_squere: 1
+  double_beds: false
+  two_twin_bads: false
+  tv: false
+  bar: false
+  chair: false
+  chair_count: 1
+  sofa: false
+  sofa_count: 1
+  desk: false
+  cupboard: false
+  stool: false
+  stool_count: 1
+  wc: false
+  wc_squere: 1
+  other: false
+  other_fild: MyString
+  comment: MyText
+  isolation: false
+  dressing_room: false
+  coffee_table: false
+  dining_table: false
+
+two:
+  room_name: MyString
+  room_squere: 1
+  double_beds: false
+  two_twin_bads: false
+  tv: false
+  bar: false
+  chair: false
+  chair_count: 1
+  sofa: false
+  sofa_count: 1
+  desk: false
+  cupboard: false
+  stool: false
+  stool_count: 1
+  wc: false
+  wc_squere: 1
+  other: false
+  other_fild: MyString
+  comment: MyText
+  isolation: false
+  dressing_room: false
+  coffee_table: false
+  dining_table: false

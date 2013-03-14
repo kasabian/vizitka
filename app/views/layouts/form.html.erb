@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Vizitka" %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag "reg", :media => "all" %>
+    <%= stylesheet_link_tag "colorbox", :media => "all" %>
+    
+  </head>
+  <body class= "body">
+
+    <div id="form_main"><br /> <br />
+    
+            <%= bootstrap_flash %><br />
+           
+            <%= yield %>
+           
+    </div> <!-- /container -->
+
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+
+  </body>
+</html>
