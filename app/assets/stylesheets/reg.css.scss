@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*label
+ {
+   margin-left: 10px;
+ }*/
 .body
  {
       background-attachment: fixed;
@@ -18,13 +22,13 @@
  {
    width: 1100px;
    margin:auto;
-   font-size: 14px;
+   font-size: 15px;
  }
  
   #form_main p
  {
    font-family: arial;
-   font-size: 14px;
+   font-size: 15px;
  }
  
  
@@ -55,6 +59,7 @@
    padding: 3px;
    color: #6387B5;
  }
+ 
  
   #form_main textarea
  {
@@ -94,6 +99,10 @@
   }
   
   .number
+  {
+    width: 60px;
+  }
+  .short_str
   {
     width: 60px;
   }
@@ -190,4 +199,10 @@
     text-decoration: none;
     margin-top: 15px;
     
+    }
+    
+    .border_top
+    {
+     border-top: 1px dotted;
+     padding-top: 10px;
     }

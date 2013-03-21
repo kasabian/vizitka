@@ -28,40 +28,49 @@
 #   colors
   
   
-  Color.create(:name => "Светлые тона")
-  Color.create(:name => "Средняя Гамма")
-  Color.create(:name => "Темные тона")
-  Color.create(:name => "Контраст")
-  Color.create(:name => "Не уверен")
+  Color.create(:name => "In light tones")
+  Color.create(:name => "In moderate tones")
+  Color.create(:name => "In dark tones")
+  Color.create(:name => "The Contrasts")  
+  Color.create(:name => "Warm tones (Beige, red, yellow)")
+  Color.create(:name => "Cool shades (light blue, dark blue, purple)")  
+  Color.create(:name => "Restrained, laconic (color)")  
+  Color.create(:name => "Bright, cheerful combination")  
+  Color.create(:name => "Not sure")
   
 # forms
   
-  Form.create(:name => "Массивные, основательные формы")
-  Form.create(:name => "Лёгкие, воздушные конструктивы")
-  Form.create(:name => "Не уверен")
+  Form.create(:name => "Massive, solid forms")
+  Form.create(:name => "Light, airy constructs")
+  Form.create(:name => "Complex, multipart forms")
+  Form.create(:name => "Simple lines, no nonsense")  
+  Form.create(:name => "Traditional, classic solutions")  
+  Form.create(:name => "Modern")
+  Form.create(:name => "Mixed")  
+  Form.create(:name => "Not sure")
   
 # materials
   
-  Material.create(:name => "Только натуральные, экологические материалы")
-  Material.create(:name => "В зависимости от помещений")
-  Material.create(:name => "Не уверен")
+  Material.create(:name => "Only natural, ecological materials")
+  Material.create(:name => "Depending on the premises")
+  Material.create(:name => "Not sure")
   
   
 #floors
   
-  Floor.create(:name => "Многоэтажное")
-  Floor.create(:name => "Одноэтажное")
-  Floor.create(:name => "Цокольный уровень")
-  Floor.create(:name => "Подземный уровень")
+  Floor.create(:name => "High-rise")
+  Floor.create(:name => "one-story building")
+  Floor.create(:name => "Ground level")
+  Floor.create(:name => "Underground level")
   
   
   #engineerings
   
-  Engineering.create(:name => "Водопровод, канализация")
-  Engineering.create(:name => "Кондиционирование")
-  Engineering.create(:name => "Отопление")
-  Engineering.create(:name => "Электрические сети")
-  Engineering.create(:name => "Слаботочные сети")
+  Engineering.create(:name => "Water supply, sewerage")
+  Engineering.create(:name => "Air Conditioning")
+  Engineering.create(:name => "Heating")
+  Engineering.create(:name => "Electrical networks")
+  Engineering.create(:name => "Low voltage network")
   
   
   #epc (example picture checks)

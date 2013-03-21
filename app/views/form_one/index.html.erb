@@ -1,9 +1,7 @@
-
-  
   
   <div class = "head">
-   <h3>Бланк заказа №1</h3>
-   (предварительная заявка)
+   <h3>Oreder form №1</h3>
+   (reservation required)
   </div>
   
   <div class = "logo">
@@ -26,50 +24,50 @@
     <% end %>
 
  <div class = "head_table">
-  <h3>Раздел 1. Контактная информация</h3>
+  <h3>Section 1. Contact information</h3>
  </div> 
 
 <div class = "forms_fild">
   <table> 
   
      <tr>
-      <td>  <%= f.label 'Ваше имя:' %></td>
-      <td>  <%= f.text_field :name , :placeholder=> "Дима", :required => "required" %></td>
+      <td>  <%= f.label 'Your name:' %></td>
+      <td>  <%= f.text_field :name , :placeholder=> "Ahmed", :required => "required" %></td>
     </tr> 
      <tr>
       <td> 
-        <%= f.label 'Способ связи 1:' %>
+        <%= f.label 'Method of communication 1:' %>
       </td>
       <td> 
-       <%= f.text_field :tel1 , :placeholder=> "телефон" %>
-       <%= f.email_field :mail1 , :placeholder=> "почта", :required => "email" %>
+       <%= f.text_field :tel1 , :placeholder=> "Tel.number" %>
+       <%= f.email_field :mail1 , :placeholder=> "Email", :required => "email" %>
       </td>
     </tr> 
      <tr>
       <td> 
-        <%= f.label 'Способ связи 2:' %>
+        <%= f.label 'Method of communication 2:' %>
       </td>
       <td>
-        <%= f.text_field :tel2 , :placeholder=> "телефон" %>
-        <%= f.text_field :mail2 , :placeholder=> "почта" %>
+        <%= f.text_field :tel2 , :placeholder=> "Tel.number" %>
+        <%= f.text_field :mail2 , :placeholder=> "Email" %>
       </td>
    </tr> 
     
     <tr>
       <td>
-        <%= f.label 'Адрес объекта:' %>
+        <%= f.label 'Object address:' %>
       </td>
       <td>
-        <%= f.text_field :address , :placeholder=> "пр. Ленина 168 кв. 2" %>
+        <%= f.text_field :address , :placeholder=> "" %>
       </td>  
     </tr>    
     
    <tr>
       <td>
-        <%= f.label 'Короткое название:' %>
+        <%= f.label 'The short name of the object:' %>
       </td>  
       <td>
-        <%= f.text_field :short_title , :placeholder=> "Название", :required => "required" %>
+        <%= f.text_field :short_title , :placeholder=> "", :required => "required" %>
       </td>  
    </tr> 
     
@@ -81,13 +79,13 @@
   
 
   <div class = "head_table">
-   <h3>Раздел 2. Общие данные</h3>
+   <h3>Section 2. General information</h3>
   </div> 
 
   <div class = "forms_fild"> 
       
     <div class = "inner_head_table">
-     <h3>1. Укажите тип здания в котором располагаються помещения:</h3>
+     <h3>1. Specify the type of the building in which the premises are located:</h3>
     </div> 
   
         <%Floor.all.each do |floor|%>   
@@ -99,29 +97,29 @@
   <table> 
            
      <tr>
-       <td><%= f.label 'Количество этажей:' %></td>
+       <td><%= f.label 'Number of floors:' %></td>
        <td><%= f.text_field :count_floors , :placeholder=> "15" , :class =>"number" %></td> 
     </tr> 
     
      <tr>
-      <td><%= f.label 'На каком этаже объект:' %></td>
+      <td><%= f.label 'On which floor is the object:' %></td>
       <td><%= f.text_field :curent_floor , :placeholder=> "12" , :class =>"number" %></td> 
     </tr> 
     
      <tr>
-      <td><b>2.<%= f.label 'Общая площадь обькта:' %></b></td>
-      <td><%= f.text_field :total_area , :placeholder=> "220", :class =>"number"%> кв. м.</td>
+      <td><b>2.<%= f.label 'The total area of the object:' %></b></td>
+      <td><%= f.text_field :total_area , :placeholder=> "220", :class =>"number"%> sq. m.</td>
     </tr> 
     
     <tr>
-      <td><b>3.<%= f.label 'Если разрабатываеться не вся площадь, укажите проектируемую:' %></b></td>
-      <td><%= f.text_field :design_area , :placeholder=> "180", :class =>"number" %> кв. м.</td>
+      <td><b>3.<%= f.label 'If not all of the developed area, specify the projected:' %></b></td>
+      <td><%= f.text_field :design_area , :placeholder=> "180", :class =>"number" %> sq. m.</td>
     </tr> 
     
     </table>
     
     <div class = "inner_head_table">
-     <h3>4. Назначение помещений и количество людей:</h3>
+     <h3>4. Appointment of premises and the number of people:</h3>
     </div> 
     
     <table>
@@ -131,7 +129,7 @@
         </td>
         <td>
           <%= f.check_box :f_chose, :id => "f_chose" %>
-          <%= f.label 'Жилое, частные апартаментаы или коттедж ' %>          
+          <%= f.label 'Residential, private apartment or cottages' %>          
         </td>        
       </tr>
       
@@ -141,7 +139,7 @@
         </td>
         <td>
           <%= f.check_box :h_chose, :id => "h_chose" %>
-          <%= f.label 'Жилое, отель или апартаменты под сдачу (аренду жилья) ' %>          
+          <%= f.label 'Apartment, hotel or apartment for rent' %>          
         </td>        
       </tr>
       
@@ -151,9 +149,31 @@
         </td>
         <td>
           <%= f.check_box :b_chose, :id => "b_chose" %>
-          <%= f.label 'Офисное помещение' %>          
+          <%= f.label 'Office space' %>          
         </td>        
       </tr>
+      
+       <tr>
+        <td>
+          <img src = "/images/s.png">
+        </td>
+        <td>
+          <%= f.check_box :s_chose, :id => "s_chose" %>
+          <%= f.label 'Shop/boutique' %>          
+        </td>        
+      </tr>
+      
+       <tr>
+        <td>
+          <img src = "/images/r.png">
+        </td>
+        <td>
+          <%= f.check_box :r_chose, :id => "r_chose" %>
+          <%= f.label 'Restaurant' %>          
+        </td>        
+      </tr>
+      
+      
       
     </table>
     
@@ -161,9 +181,1099 @@
     
     <!-- ################################################конец Раздел 2   -->
     
+   <!-- ################################################ S   -->
+   <div id = "s">
+     <div class = "head_table">
+         <h3> <img src ="/images/s.png" >Shop/boutique</h3>
+         <h3> Appointment of premises and the number of people:</h3>
+       </div>
+       
+       <%= f.fields_for :shops do |shop| %>
+         <div class = "forms_fild">
+            <table>
+              <tr>
+                <td>
+                  <%= shop.label 'The proposed name' %> 
+                  <%= shop.text_field :people_name, :placeholder => "Boutique Le Grange" %>    
+                </td>
+              </tr>
+              
+               <tr>
+                <td>
+                  <%= shop.label 'Total area:' %> 
+                  <%= shop.text_field :people_area, :placeholder => "240", :class => "number" %>sq. m.,
+                  
+                  <%= shop.label 'From them service spaces :' %> 
+                  <%= shop.text_field :people_service, :placeholder => "110", :class => "number" %>sq. m.
+                </td>
+              </tr>
+              
+              
+            </table>
+         </div>
+         
+         
+         <div class="forms_fild">
+          <div class ="inner_head_table">
+            <h3>Specify the product groups:</h3>
+          </div>
+          <table>
+          
+             <tr>
+               <td>
+                 <%= shop.check_box :specify_clothing%>
+                 <%= shop.label 'Clothing' %>,
+                 
+                 <%= shop.check_box :specify_accessories%>
+                 <%= shop.label 'Accessories' %>,
+                 
+                 <%= shop.check_box :specify_shoes%>
+                 <%= shop.label 'Shoes' %>,
+                 
+                 <%= shop.check_box :specify_perfumes%>
+                 <%= shop.label 'Perfumes' %>,
+                 
+                 <%= shop.check_box :specify_watch%>
+                 <%= shop.label 'Watches & jewelry' %>
+               </td> 
+             </tr>
+             
+             <tr>
+               <td>
+                 <%= shop.check_box :specify_auto%>
+                 <%= shop.label 'Auto-Moto Technics' %>,
+                 
+                 <%= shop.check_box :specify_furniture%>
+                 <%= shop.label 'Furniture, plumbing fixtures, light' %>,
+                 
+                 <%= shop.check_box :specify_sport%>
+                 <%= shop.label 'Sporting goods and apparel' %>,
+               </td> 
+             </tr>
+             
+             <tr>
+               <td>
+                 <%= shop.check_box :specify_music%>
+                 <%= shop.label 'Music, video, books' %>,
+                 
+                 <%= shop.check_box :specify_electronics%>
+                 <%= shop.label 'Electronics' %>,
+                 
+                 <%= shop.check_box :specify_homeware%>
+                 <%= shop.label 'Homeware' %>,
+                 
+                 <%= shop.check_box :specify_children%>
+                 <%= shop.label 'Children goods' %>,
+                 
+                 <%= shop.check_box :specify_art%>
+                 <%= shop.label 'Works of art' %>
+               </td> 
+             </tr>
+             
+             
+             <tr>
+               <td>
+                 <%= shop.check_box :specify_instrum%>
+                 <%= shop.label 'Musical instruments' %>,
+                 
+                 <%= shop.check_box :specify_products%>
+                 <%= shop.label 'Products & household chemical goods' %>
+               </td> 
+             </tr>
+             
+             
+              <tr>
+               <td>
+                 <%= shop.label 'Add your comment:' %>
+                 <%= shop.text_area :specify_comments%>  
+
+               </td> 
+             </tr>
+          </table>
+         </div>
+         
+         <div class = "forms_fild">
+          <div class = "inner_head_table">
+            <h3> Key elements in the area and premises: </h3>
+          </div>
+          
+          <table>
+            <tr>
+              <td>
+                 
+                 <%= shop.check_box :el_hall%>
+                 <%= shop.label 'Hall or reception on' %>
+                 <%= shop.text_field :el_hall_count, :placeholder => "2", :class => "number"  %> managers, 
+                 
+                 <%= shop.check_box :el_cash%>
+                 <%= shop.label 'Cash zone' %>
+                 <%= shop.text_field :el_cash_count, :placeholder => "2", :class => "number"  %> persons
+                                               
+              </td>
+            </tr>
+            
+            
+            <tr>
+              <td>
+                 
+                 <%= shop.check_box :el_main%>
+                 <%= shop.label 'The main trading Hall' %>,
+                 
+                 <%= shop.check_box :el_sales%>
+                 <%= shop.label 'additional sales hall' %>,
+                 
+                 <%= shop.check_box :el_bar%>
+                 <%= shop.label 'Bar zone (coffee, drinks)' %>,
+               
+                                               
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                 
+                 <%= shop.check_box :el_soft%>
+                 <%= shop.label 'Soft zone' %>
+                 <%= shop.text_field :el_soft_count, :placeholder => "5", :class => "number"  %> sofas/chair,
+                 
+                 
+                 <%= shop.check_box :el_podium%>
+                 <%= shop.label 'Podium for the displays and demonstrations' %>          
+                                               
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                 
+                 <%= shop.check_box :el_fitting%>
+                 <%= shop.label 'Fitting rooms' %>,
+
+                 <%= shop.check_box :el_plase%>
+                 <%= shop.label 'place for negotiations' %>,
+                 
+                 <%= shop.check_box :el_bathroom%>
+                 <%= shop.label 'A Bathroom' %>,
+                 
+                 <%= shop.check_box :el_children%>
+                 <%= shop.label 'Children\'s area' %>,
+                 
+                 <%= shop.check_box :el_tv%>
+                 <%= shop.label 'Tv' %>
+                 <%= shop.text_field :el_tv_count, :placeholder => "2", :class => "number"  %> pcs.
+                                               
+              </td>
+            </tr>
+            
+            
+            <tr>
+              <td>
+                 <%= shop.label 'Add your comment:' %>
+                 <%= shop.text_area :el_comments %> 
+                                               
+              </td>
+            </tr>
+            
+          </table>
+          
+         </div>
+         
+         
+         <div class = "forms_fild">
+           <div class = "inner_head_table">
+             <h3>Requirements</h3>
+           </div>
+           
+           <table>
+             <tr>
+               <td>
+                 <%= shop.check_box :requir_office%>
+                 <%= shop.label 'Office space on' %>
+                 <%= shop.text_field :requir_office_count, :placeholder => "5", :class => "number"  %> staff,
+                 
+                 
+                 <%= shop.check_box :requir_separate%>
+                 <%= shop.label 'Separate entrance' %>
+               </td>
+             </tr>
+             
+             
+             <tr>
+               <td>
+               
+                 <%= shop.check_box :requir_sequrity%>
+                 <%= shop.label 'Premises for security service' %>,
+                 
+                 <%= shop.check_box :requir_recreation%>
+                 <%= shop.label 'Recreation room (locker room) for staff' %>,
+                 
+                 <%= shop.check_box :requir_head%>
+                 <%= shop.label 'Head office of the chief' %>,
+                 
+                 
+               </td>
+             </tr>
+             
+             <tr>
+               <td>
+                 <%= shop.label 'Add your comment:' %>
+                 <%= shop.text_area :requir_comments, :placeholder => "Head office of the chief should take four guests (as a VIP service area)"%>
+              </td>
+             </tr>
+             
+           </table>
+           
+         </div>
+         
+         
+       <%end%>
+        <p><%= f.link_to_add "+ Добавить", :shops, :class => "click hidden"%></p> 
+       
+   </div>
+   
+   <!-- ################################################ конец S   -->
+    
+   <!-- ################################################ R   -->
+   <div id = "r">
+       <div class = "head_table">
+         <h3> <img src ="/images/r.png" >Restaurant</h3>
+         <h3> Appointment of premises and the number of people:</h3>
+       </div>
+   
+      
+        <%= f.fields_for :restaurants do |rest| %>
+         <div class = "forms_fild">
+         <table>
+           <tr>
+             <td>
+               <%= rest.label 'The proposed name' %> 
+               <%= rest.text_field :name, :placeholder => "Mon Real" %>                
+             <td/>
+           </tr>
+           
+           <tr>
+             <td>
+               <%= rest.label 'Number of storeys:' %> 
+               <%= rest.text_field :number_storeys, :class => "number", :placeholder => "22" %> , 
+               
+               <%= rest.label 'Level restaurant on the floors:' %> 
+               <%= rest.text_field :level_restaurent, :class => "number", :placeholder => "0" %> ,
+               
+               <%= rest.check_box :separate %>
+               <%= rest.label 'There is a separate' %>            
+             <td/>
+           </tr>
+           
+           <tr>
+             <td>
+               <%= rest.label 'Total area:' %> 
+               <%= rest.text_field :total_area, :class => "number", :placeholder => "450" %>  sq.m.,
+               
+               <%= rest.label 'From them service spaces :' %> 
+               <%= rest.text_field :service_spaces, :class => "number", :placeholder => "150" %> ,
+               
+               <%= rest.check_box :zone_parking %>
+               <%= rest.label ' the entrance of the parking zone' %>             
+             <td/>
+           </tr>
+           
+           <tr>
+             <td class = "border_top">
+               <%= rest.check_box :hall_reception %>
+               <%= rest.label 'Hall-reception:' %> 
+               <%= rest.text_field :reception_count, :class => "number", :placeholder => "2" %> pcs.,
+               
+               <%= rest.check_box :children_area %>
+               <%= rest.label 'Area for children ' %>,  
+               
+               <%= rest.label 'Wardrobe for' %> 
+                <%= rest.text_field :wardrobe, :class => "number", :placeholder => "30" %> visitors,
+                
+               <%= rest.check_box :reception_bathroom %>
+               <%= rest.label 'A Bathroom' %>
+               
+             </td>
+           </tr>
+           
+            <tr>
+             <td class = "border_top">
+               <%= rest.check_box :main_hall %>
+               <%= rest.label 'The main hall for:' %> 
+               <%= rest.text_field :main_persons, :class => "number", :placeholder => "100" %> persons,
+               
+                             
+               <%= rest.label ' quantity:' %> 
+                <%= rest.text_field :main_quantity, :class => "number", :placeholder => "2" %> premises,
+                
+               <%= rest.check_box :main_bathroom %>
+               <%= rest.label 'A Bathroom' %>
+               
+             </td>
+           </tr>
+           
+           
+           <tr>
+             <td>
+               <%= rest.label 'The main hall for:' %> 
+               <%= rest.text_field :main_places, :class => "number", :placeholder => "50" %> places,
+               
+               <%= rest.check_box :main_showcases %>
+               <%= rest.label 'Showcases for products:' %> 
+               <%= rest.text_field :main_showcases_str, :placeholder => "Cake" %>,
+                             
+ 
+               <%= rest.check_box :main_scene %>
+               <%= rest.label 'Scene' %>
+               
+             </td>
+           </tr>
+           
+           <tr>
+             <td>
+               <%= rest.check_box :main_bar_area_ch %>
+               <%= rest.label 'bar area:' %> 
+               <%= rest.text_field :main_bar_area, :class => "number", :placeholder => "12" %> places,
+               
+               <%= rest.check_box :main_aquarium %>
+               <%= rest.label 'Aquarium or plants' %>,
+               
+               <%= rest.check_box :main_tv %>
+               <%= rest.label ' tv' %>,
+               
+               <%= rest.text_field :main_tv_count, :placeholder => "3-5", :class => "short_str" %> pcs.,
+                             
+ 
+               <%= rest.check_box :main_terrace %>
+               <%= rest.label 'Terrace' %>
+               
+             </td>
+           </tr>
+           
+           <tr>
+             <td class = "border_top">
+             
+               <%= rest.check_box :separate %>
+               <%= rest.label 'A separate bar:' %> 
+               <%= rest.text_field :separate_count, :class => "number", :placeholder => "20" %> places,
+               
+               <%= rest.label 'chillout' %>
+               <%= rest.text_field :separate_chillout, :class => "number", :placeholder => "30" %> places,
+               
+            
+               <%= rest.label ' tv' %>               
+               <%= rest.text_field :separate_tv, :placeholder => "3", :class => "number" %> pcs.,
+                             
+ 
+               <%= rest.check_box :separate_bathroom %>
+               <%= rest.label 'A Bathroom' %>
+               
+             </td>
+           </tr>
+           
+           <tr>
+             <td class = "border_top">
+             
+               <%= rest.check_box :banqueting_hall %>
+               <%= rest.label 'banqueting hall' %>
+               <%= rest.text_field :banqueting_count, :class => "number", :placeholder => "120" %> places,
+             
+               <%= rest.check_box :banqueting_convertible %>
+               <%= rest.label 'Convertible (tables are moved if necessary)' %>
+               
+             </td>
+           </tr>
+           
+           <tr>
+             <td class = "border_top">
+                     
+               <%= rest.check_box :vip %>
+               <%= rest.label 'vip hall' %>
+               <%= rest.text_field :vip_count, :class => "number", :placeholder => "8" %>person,
+               
+               <%= rest.check_box :vip_bathroom %>
+               <%= rest.label 'A Bathroom' %>,
+               
+               <%= rest.check_box :vip_tv %>
+               <%= rest.label 'tv' %>,
+               
+               <%= rest.check_box :vip_bar %>
+               <%= rest.label 'Bar' %>,
+               
+               <%= rest.check_box :vip_scene %>
+               <%= rest.label 'Scene' %>,
+               
+                <%= rest.check_box :vip_terrace %>
+               <%= rest.label 'Terrace' %>
+               
+               
+             </td>
+           </tr>
+           
+            <tr>
+             <td class = "border_top">
+                     
+               <%= rest.check_box :outdoor %>
+               <%= rest.label 'Outdoor area on the' %>
+               <%= rest.text_field :outdoor_count, :class => "number", :placeholder => "60" %>places,
+               
+               <%= rest.check_box :outdoor_tv%>
+               <%= rest.label 'Tv' %>,
+               
+               <%= rest.check_box :outdoor_bar %>
+               <%= rest.label 'Bar' %>,
+               
+               <%= rest.check_box :outdoor_greenn %>
+               <%= rest.label 'Green plantings' %>
+               
+             </td>
+           </tr>
+           
+             <tr>
+             <td class = "border_top">
+              
+               <%= rest.label 'Additionally take into account or to equip:' %>
+               <%= rest.text_area :appointment_comment%>
+                
+             </td>
+           </tr>
+           
+         </table>
+        
+      </div>
+      
+      <div class = "forms_fild">
+        <div class = "inner_head_table">
+          <h3>Requirements for service spaces:</h3>
+        </div>
+        <table>
+          <tr>
+            <td>
+               <%= rest.check_box :requir_separate %>
+               <%= rest.label 'Separate entrance' %>,
+               
+               <%= rest.check_box :requir_bathroom %>
+               <%= rest.label 'A Bathroom' %>,
+               
+               <%= rest.check_box :requir_kitchen %>
+               <%= rest.label 'Kitchen' %>
+               <%= rest.text_field :requir_kitchen_squere, :class => "number", :placeholder => "80" %>sq.m.,
+               
+               <%= rest.check_box :requir_visitors %>
+               <%= rest.label 'Must be seen from the area of ​​visitors' %>,
+               
+               <%= rest.check_box :requir_wine %>
+               <%= rest.label 'Wine cellars' %>
+              
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+               <%= rest.check_box :requir_storge %>
+               <%= rest.label 'Storage facilities' %>
+               <%= rest.text_field :requir_storge_sq, :class => "number", :placeholder => "80" %>sq.m.,
+               
+               <%= rest.check_box :requir_quantity %>
+               <%= rest.label 'quantity:' %>
+               <%= rest.text_field :requir_quantity_count, :class => "number", :placeholder => "80" %>premises,
+               
+               <%= rest.check_box :requir_cold_room %>
+               <%= rest.label 'cold room' %>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+               <%= rest.check_box :requir_locker_room %>
+               <%= rest.label 'Locker room, rest room for staff' %>,
+               
+               <%= rest.check_box :requir_shower %>
+               <%= rest.label 'Shower' %>
+            </td>
+          </tr>
+          
+          <tr>
+            <td class = "border_top">
+               <%= rest.check_box :requir_accounts %>
+               <%= rest.label 'accounts department' %>,
+               
+               <%= rest.check_box :requir_head_office %>
+               <%= rest.label 'Head office of the chief' %>,
+               
+               <%= rest.check_box :requir_head_bathroom %>
+               <%= rest.label 'A Bathroom' %>
+            </td>
+          </tr>
+          
+           <tr>
+            <td class = "border_top">
+               <%= rest.check_box :requir_sequrity %>
+               <%= rest.label 'Premises for security service' %>,
+               
+               <%= rest.check_box :requir_video %>
+               <%= rest.label 'Equipped with a video surveillance system' %>,
+               
+               <%= rest.check_box :requir_video_bathroom %>
+               <%= rest.label 'A Bathroom' %>
+            </td>
+          </tr>
+          
+          <tr>
+            <td class = "border_top">
+              
+               <%= rest.label 'Additionally take into account or to equip:' %>
+               <%= rest.text_area :requir_comment %>
+            
+            </td>
+          </tr>
+          
+          
+        </table>
+        
+      </div>
+      
+      
+       <div class = "forms_fild">
+
+         <table>
+           <tr>
+             <td>
+               <b> Features of the complex: </b>
+               <%= rest.check_box :complex_separate %>
+               <%= rest.label 'A separate structure' %>,
+               
+               <%= rest.check_box :complex_commercial %>
+               <%= rest.label 'Part of a commercial/residential complex' %>
+             </td>
+           </tr>
+           
+           <tr>
+             <td class = "border_top">
+               <b> Surrounding area: </b>
+               <%= rest.check_box :complex_central %>
+               <%= rest.label 'The central area of the city' %>,
+               
+               <%= rest.check_box :complex_suburb %>
+               <%= rest.label 'The Suburb' %>,
+               
+               <%= rest.check_box :complex_guay %>
+               <%= rest.label 'Quay' %>
+             </td>
+           </tr>
+           
+           <tr>
+             <td class = "border_top">
+               <b> Audience: </b>
+               <%= rest.check_box :complex_mainly %>
+               <%= rest.label 'Mainly the local population' %>,
+               
+               <%= rest.check_box :complex_tourism %>
+               <%= rest.label 'Tourism' %>,
+               
+               <%= rest.check_box :complex_mixed %>
+               <%= rest.label 'Mixed' %>
+             </td>
+           </tr>
+           
+         </table>
+       </div>
+          
+         
+        <%end%>
+        
+         <p><%= f.link_to_add "+ Добавить", :restaurants, :class => "click hidden"%></p> 
+        
+        
+      
+     
+       
+   
+   
+   </div>
+   <!-- ################################################ конец R   -->
+   
+   
+    
+    <!-- ################################################ F   --> 
+    
+   
+<div id = "f">    
+   <div class = "forms_fild"> 
+   <div class = "inner_head_table">
+    <h3> <img src ="/images/f.png" >Residential, private apartment or cottages <br />Appointment of premises and the number of people :</h3>
+     <br />
+   </div>
+    Family of  <input type= "texte" name="family_count" value = "" placeholder="5" class = "family_count number"><br />
+    
+   </div>
+   
+  <%= f.fields_for :familys do |family| %>
+     <div class = "family_filds">
+      <div class = "forms_fild">
+      <p> <b>List the gender, age and marital status of each household member: </b></p>
+       <table>
+        <tr> 
+          <td><%= family.label 'Full name:' %></td>
+          <td><%= family.text_field :name %></td>
+        </tr>
+        <tr> 
+           <td><%= family.label 'Family status:' %></td>
+           <td><%= family.text_field :status %></td>
+         </tr> 
+         <tr>
+          <td><%= family.label 'Age:' %></td>
+          <td><%= family.text_field :age , :placeholder=> "25" , :class =>"number" %></td>
+         </td>
+         <tr>
+           <td><%= family.label 'Special Notes:' %></td>
+            <td><%= family.text_area :comment %></td>
+         </tr>   
+        </table>
+       </div> 
+     </div>  
+   <% end %>
+  
+  <p><%= f.link_to_add "+ Добавить", :familys, :class=>"family_add hidden" %></p> 
+    
+    
+    
+    
+    
     
     <div class = "head_table">
-      <h3>Раздел 3. Форма и цвет</h3>
+     <h3>Staff and visitors:</h3>
+    </div> 
+  <div class = "forms_fild"> 
+    <b>4.1</b>
+      <table>
+        <tr>
+         <td><%= f.label 'Additional staff of' %></td>
+         <td><%= f.text_field :personal_count , :placeholder=> "2" , :class =>"number" %> people</td>
+        </tr>
+        <tr>
+         <td><%= f.label 'domiciliary' %></td>
+         <td><%= f.select( :personal_type, options_for_select([["coming", 'comming'], ["living with family", 'living']])) %></td>
+        </tr>
+      </table> 
+    </div>    
+        
+        
+   <div class = "forms_fild">
+  
+       <table>
+          <tr>
+           <td><b>4.2<%= f.label 'Guests in my house:' %></b></td>
+           <td><%= f.select( :guest_type, options_for_select([["very_often", 'very_often'], ["occasionally", 'occasionally'], ["never", 'never']])) %></td>
+          </tr>
+          <tr> 
+           <td><%= f.label 'the maximum number of guests at a time:' %></td>
+           <td><%= f.text_field :guest_max , :placeholder=> "10" , :class =>"number" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label 'Of them can sometimes stay overnight:' %></td>
+            <td><%= f.text_field :guest_night , :placeholder=> "4" , :class =>"number" %></td>
+          </tr>
+        </table>  
+    
+    </div>   
+ </div>      
+       
+     <!-- ################################################ F   -->      
+       <!-- ################################################конец Раздел 6   --> 
+       
+       
+        <!-- ################################################ H   -->   
+   
+ <div id = "h">      
+         <div class = "head_table">
+          <h3> <img src = "/images/h.png"> Apartment, hotel or apartment for rent</h3>
+        </div> 
+        
+        <div class = "head_table" style = "margin-bottom: 20px;">
+         <p> Number of standard rooms for individual apartments:
+         <input type= "texte" name="apartments_count"  placeholder="3" class = "apartments_count number"> <br />
+          List the major elements required in every room:</p>
+       </div>
+  
+ 
+ 
+        <%= f.fields_for :apartments do |apartment| %>
+         <div class = "apartments_filds">
+          <div class = "forms_fild"> 
+           
+            
+                Apartment:
+                 <%= apartment.text_field :a_name , :placeholder=> "Two-room suite with a cinema" %>            
+                Area:
+                 <%= apartment.text_field :squere , :placeholder=> "108", :class =>"number" %>  
+                sq.m.
+                
+            
+            
+           <%= apartment.fields_for :rooms do |room| %>
+            <div class ="top_line">
+              <%= room.link_to_remove "delete", :style => "width: 40px;", :class => "pic_destroy_position" %>
+              <table>
+                <tr>
+                  <td>
+                   <%= room.label 'Room:' %>
+                  </td> 
+                  <td>
+                  <%= room.text_field :room_name , :placeholder=> "Two-room suite with a cinema" %> 
+                  <%= room.text_field :room_squere , :placeholder=> "36", :class => "number" %> sq.m. <br />
+                  </td>
+                 </tr>
+                 
+                 <tr>
+                   <td>
+                     <%= room.check_box :double_beds %>
+                     <%= room.label 'double bed' %>
+                    </td>
+                    <td>
+                     <%= room.check_box :two_twin_bads %>
+                     <%= room.label 'two single beds' %>
+                    </td>
+                 </tr>
+                 <tr>
+                  <td>
+                   <%= room.check_box :tv %>
+                   <%= room.label 'TV' %>
+                  </td>
+                  <td>
+                    <%= room.check_box :bar %>
+                    <%= room.label 'Bar:' %>
+                  </td>
+                 </tr>
+                 
+                 <tr>
+                  <td> 
+                   <%= room.check_box :chair %>
+                   <%= room.label 'armchair:' %>
+              
+                   <%= room.text_field :chair_count, :class => "number" %>
+                   <%= room.label ' pcs' %>.
+                  </td>
+                  <td>
+                    <%= room.check_box :sofa %>
+                    <%= room.label 'sofa:' %>
+              
+                    <%= room.text_field :sofa_count, :class => "number" %>
+                    <%= room.label ' pcs' %>.
+                  </td> 
+                </tr>
+                <tr> 
+                  <td>
+                   <%= room.check_box :desk %>
+                   <%= room.label 'desk' %>
+                  </td>
+                  <td>
+                   <%= room.check_box :cupboard %>
+                   <%= room.label 'wardrobe' %>
+                  </td> 
+                </tr> 
+              
+                <tr>
+                 <td>
+                  <%= room.check_box :stool %>
+                  <%= room.label 'chairs:' %>
+              
+                  <%= room.text_field :stool_count, :class => "number" %>
+                  <%= room.label 'pcs' %>.
+                 </td>
+                 <td>
+                  <%= room.check_box :wc %>
+                  <%= room.label '  WC:' %>
+              
+                  <%= room.text_field :wc_squere, :class => "number" %>
+                  sq. m.
+                 </td>  
+                </tr> 
+                <tr>
+              
+                  <td><%= room.label 'isolated' %></td>
+                 <td><%= room.check_box :isolation %></td>
+              
+                </tr>
+                
+                <tr>
+                 <td><%= room.label 'dressing room' %></td>
+                 <td><%= room.check_box :dressing_room %></td>
+                </tr>
+                
+                <tr>
+                 <td><%= room.label 'coffee table' %></td> 
+                 <td><%= room.check_box :coffee_table %></td>
+                </tr>
+                <tr>
+                 <td><%= room.label 'dining table' %></td>
+                 <td><%= room.check_box :dining_table %></td> 
+                </td> 
+                
+                 <tr>
+                   <td>
+                    <%= room.check_box :other %>
+                    <%= room.label 'Other:' %>
+                   </td>
+                   <td> 
+                    <%= room.text_field :other_fild, :placeholder=>"houseplants" %>
+                   </td> 
+                 </tr>
+                 
+                  <tr>
+                   <td> <%= room.label 'Notes:' %></td>
+                   <td><%= room.text_area :comment, :placeholder=>"TV area equipped projector and remote control curtains on the windows. Sofas in genuine leather." %></td>
+                  </tr>
+                
+              </table>  
+              
+            </div>  
+           <%end%>
+           
+               <%= apartment.link_to_add "+Add another room to the room (apartment)", :rooms, :style => "width:400px;"  %> 
+           
+           
+           
+         </div> 
+        </div> 
+       <%end%> 
+         <p><%= f.link_to_add "+ Добавить", :apartments, :class=>"apartments_add hidden" %> </p>
+         
+   </div>      
+         
+      <!-- ################################################ H   --> 
+      
+         <!-- ################################################ B   --> 
+     
+   <div id = "b">  
+      <div class = "head_table">
+        <h3> <img src ="/images/b.png" > Office space </h3>
+        <h3>The structure of the Office:</h3>
+      </div>
+      <div class = "forms_fild"> 
+        
+        <%= f.fields_for :offices do |of| %>
+           <table class = "ofice_table"> 
+             <tr> 
+               <td>
+                 <%= of.check_box :hall %>
+                 <%= of.label 'hall' %>
+            
+                 <%= of.check_box :hall_wc %>
+                 <%= of.label 'To equip a bathroom' %>
+                </td>
+                <td>
+                 <%= of.text_field :hall_count,:class => "number", :placeholder=>"1" %>
+                 <%= of.label 'Premises' %>
+                </td>
+             </tr>
+              <tr>
+                <td>
+                 <%= of.check_box :head_cabinet %>
+                 <%= of.label 'Cabinet for ' %>
+                 
+                 <%= of.text_field :head_cabinet_piple,:class => "number", :placeholder=>"1" %>
+                 <%= of.label 'person' %> + 
+                 
+                 <%= of.text_field :head_cabinet_goust,:class => "number", :placeholder=>"4" %>
+                 <%= of.label 'guests' %>  
+                 
+                </td>
+                <td>
+                 <%= of.text_field :head_count,:class => "number", :placeholder=>"1" %>
+                 <%= of.label 'Premises' %> 
+                </td>
+               </tr>
+               <tr>
+                 <td>
+                  <%= of.check_box :head_wc %>
+                  <%= of.label 'fitted bathroom' %>
+                  
+                  <%= of.check_box :head_shower %>
+                  <%= of.label 'including shower' %>
+                 </td> 
+               </tr>
+               
+               <tr>
+                 <td>
+                  <%= of.check_box :waiting_room %>
+                  <%= of.label 'Reception secretary for ' %>
+                 
+                 
+                  <%= of.text_field :waiting_room_piple,:class => "number", :placeholder=>"4"%>
+                  <%= of.label 'visitors' %> 
+                 </td>
+                 <td>
+                  <%= of.text_field :waiting_room_count,:class => "number", :placeholder=>"1" %>
+                  <%= of.label 'Premises' %> 
+                 </td>
+               </tr>
+               
+               <tr>
+                 <td>
+                  <%= of.check_box :expert_room %>
+                  <%= of.label 'cabinet top manager for' %>
+                 
+                 
+                  <%= of.text_field :expert_room_piple,:class => "number" %>
+                  <%= of.label 'person' %> 
+                 </td>
+                 <td>
+                  <%= of.text_field :expert_room_count,:class => "number", :placeholder=>"1" %>
+                  <%= of.label 'Premises' %> 
+                 </td>
+               </tr>
+             
+               <tr>
+                 <td>
+                  <%= of.check_box :expert_jr_room %>
+                  <%= of.label 'cabinet middle manager for' %>
+                 
+                 
+                  <%= of.text_field :expert_jr_piple,:class => "number" %>
+                  <%= of.label 'person' %> 
+                 </td>
+                 <td>
+                  <%= of.text_field :expert_jr_count,:class => "number", :placeholder=>"1" %>
+                  <%= of.label 'Premises' %> 
+                 </td>
+               </tr>
+               
+               <tr>
+                 <td>
+                  <%= of.check_box :conf_hall %>
+                  <%= of.label 'meeting room for' %>
+                 
+                 
+                  <%= of.text_field :conf_hall_piple, :placeholder=>"10 + 24" %>
+                  <%= of.label 'person' %> 
+                 </td>
+                 <td>
+                  <%= of.text_field :conf_hall_count,:class => "number", :placeholder=>"1" %>
+                  <%= of.label 'Premises' %> 
+                 </td>
+               </tr>
+               
+               <tr>
+                 <td>
+                  <%= of.check_box :private_room %>
+                  <%= of.label 'private room for negotiation' %>
+                 
+                 
+                  <%= of.text_field :private_room_piple,:class => "number", :placeholder=>"3" %>
+                  <%= of.label 'person' %> 
+                 </td>
+                 <td>
+                  <%= of.text_field :private_room_count,:class => "number", :placeholder=>"1" %>
+                  <%= of.label 'Premises' %> 
+                 </td>
+               </tr>
+               
+                   <tr>
+                 <td>
+                  <%= of.check_box :operation_hall %>
+                  <%= of.label 'Operating room on' %>
+                 
+                 
+                  <%= of.text_field :operation_hall_piple,:class => "number" %>
+                  <%= of.label 'person' %> 
+                 </td>
+                 <td>
+                  <%= of.text_field :operation_hall_count,:class => "number", :placeholder=>"1" %>
+                  <%= of.label 'Premises' %> 
+                 </td>
+               </tr>
+             
+               <tr>
+                 <td class = "no_border">
+                  <%= of.check_box :restroom %>
+                  <%= of.label 'rest room ' %>
+                  
+                  <%= of.text_field :restroom_squere,:class => "number", :placeholder=>"40" %>
+                  sq.m.
+                  
+                 
+                 </td> 
+                </tr> 
+                
+                <tr>
+                  <td>
+                   <%= of.check_box :restroom_wc %>
+                   <%= of.label 'equipped bathroom' %>
+                  
+                   <%= of.check_box :restroom_shower %>
+                   <%= of.label 'including shower' %>
+                  
+                   <%= of.check_box :restroom_kitchen %>
+                   <%= of.label 'Kitchen-dining room' %>
+                   </td>
+               </tr>
+               
+               <tr>
+                 <td class = "no_border">
+                   <%= of.check_box :trading_hall %>
+                   <%= of.label 'trade exhibition area' %>
+                   
+                   <%= of.text_field :trading_hall_squere,:class => "number" %>
+                  sq.m.
+                 </td>
+               </tr>
+               
+               <tr>
+                 <td>
+                    <%= of.label ' Product specification' %>
+                    <%= of.text_area :trading_specify %> 
+                 </td>               
+               </tr>
+               
+               <tr>
+                 <td class = "no_border">
+                   <%= of.check_box :more_hall %>
+                   <%= of.label 'Additional facilities that should be included in the project:' %>
+                 </td>
+               </tr>
+               
+               <tr>
+                 <td class = "no_border">
+                   <%= of.check_box :cafe %>
+                   <%= of.label 'Cafe/restaurant' %>
+                   
+                   <%= of.check_box :dressing %>
+                   <%= of.label 'dressing room' %>
+                   
+                   <%= of.check_box :safe %>
+                   <%= of.label 'room-safe' %>                   
+                 </td>
+                 
+                 </tr>
+                 
+                 <tr>
+                   <td class = "no_border">
+                     <%= of.check_box :security_hall %>
+                     <%= of.label 'CCTV/security area' %>
+                   </td>
+                 </tr>
+                 
+                 <tr>
+                   <td class = "no_border">
+                     <%= of.check_box :server_room %>
+                     <%= of.label 'Server' %>
+                     
+                     <%= of.check_box :warehouse %>
+                     <%= of.label 'warehouse' %>
+                   </td>
+                 </tr>              
+               
+           </table>   
+        <%end%>
+         <%= f.link_to_add "", :offices, :class => "click hidden"  %>
+      </div>
+   </div>     
+       <!-- ################################################ B  --> 
+      
+    
+    
+    <div class = "head_table">
+      <h3>Section 3. Shape and color</h3>
     </div> 
     
     <div class = "forms_fild"> 
@@ -171,12 +1281,12 @@
     <table class = "form_and_color">
     
     <div class = "inner_head_table">
-      <h3>Укажите ваши предпочтения: </h3>
+      <h3>Indicate your preferences: </h3>
     </div> 
     
      <tr>
       <td>
-       <b> цвета </b>
+       <b> colors </b>
       </td>
      </tr> 
      
@@ -184,14 +1294,14 @@
        <td>
         <%Color.all.each do |color|%>   
         <%= check_box_tag("color_#{color.id}",color.id) %>
-        <%= color.name  %>
+        <%= color.name  %>,
         <%end%>
        </td> 
       </tr>
  
     <tr>
      <td>
-       <b> формы </b>
+       <b> forms </b>
       </td>
     </tr>
     
@@ -199,14 +1309,14 @@
      <td>
       <%Form.all.each do |form|%>   
        <%= check_box_tag("form_#{form.id}",form.id) %>
-       <%= form.name  %>
+       <%= form.name  %>,
       <%end%>
      </td> 
    </tr>
    
    <tr>
      <td>
-      <b> Материалы </b>
+      <b> materials </b>
      </td>
    </tr>
    
@@ -214,7 +1324,7 @@
     <td>
     <%Material.all.each do |material|%>   
      <%= check_box_tag("material_#{material.id}",material.id) %>
-     <%= material.name  %>
+     <%= material.name  %>,
     <%end%>
     </td>
    </tr>
@@ -222,8 +1332,8 @@
    
    <tr>
     <td>
-      <%= f.label 'Особые пожилания:' %>
-      <%= f.text_area :wishes_color , :placeholder=> "Применить в интерьере с позолотой или серебром" %>
+      <%= f.label 'Special wishes:' %>
+      <%= f.text_area :wishes_color , :placeholder=> "Applied in the Interior elements with gold or silver (patinated)" %>
     </td>
    </tr> 
     
@@ -233,12 +1343,12 @@
  
  
      <div class = "head_table">
-      <h3>Раздел 4. Примеры решений</h3>
+      <h3>Section 4. Examples of solutions</h3>
     </div> 
     
     <div class = "forms_fild"> 
 
-     <p>Укажите, какая из приведённых картинок по стилю Вам нравиться больше остальных. <br /> <br /><i> Нажмите на изображение что бы увеличить </i></p>
+     <p>Indicate which of these pictures on the style you like more than others? <br /> <br /><i> Click on image to enlarge </i></p>
      <div style = "min-height:300px;"> 
        <%Epc.all.each do |epc|%>
         <div style = "float:left; margin:5px;">
@@ -255,7 +1365,7 @@
    
   <div class = "forms_fild"> 
 
-      <p>Укажите, какая из приведённых картинок по стилю Вам категорически не нравиться. <br /> <br /><i> Нажмите на изображение что бы увеличить </i></p>
+      <p>Indicate which of these pictures on the style you absolutely do not like it <br /> <br /><i> Click on image to enlarge </i></p>
       <div style = "min-height:300px;"> 
         <%Epcbad.all.each do |epcbad|%>
           <div style = "float:left; margin:5px;">
@@ -273,8 +1383,7 @@
    <div class = "forms_fild"> 
 
      <div class = "dotted_bottom">
-       <p >Если есть какие-либо изображения, на которые нам стоит обратить внимание в процессе работы над интерьерами,
-       присоедините их к анкете, загрузив в приведенную ниже форму:  </p>
+       <p >If there are any images to which we should pay attention in the work on the interior, connect them to the application form, download a form below:  </p>
      </div> 
    
     <%=f.file_field :hide_image, :style => "visibility: hidden;"%> 
@@ -286,16 +1395,16 @@
          <div id ="pic_div">   
           <table>
            <tr>
-             <td><%= pic.label 'Выбрать изображение' %></td>
+             <td><%= pic.label 'Select image' %></td>
              <td><%= pic.file_field :image, :length => 1, :accept => "image" %></td> 
            </tr>
            <tr>      
-              <td><%= pic.label 'Ваш комментарий к картинке' %></td>
+              <td><%= pic.label 'Your comment to the picture :' %></td>
               <td><%= pic.text_area :comment %></td>
            </tr>
            <tr>  
              <td><%= pic.label ' www.' %></td>
-             <td><%= pic.text_field :link %></td>
+             <td>http:// <%= pic.text_field :link %></td>
            </tr>  
             <%= pic.link_to_remove "delete", :class => "pic_destroy_position" %>
           </table> 
@@ -307,7 +1416,7 @@
     
     <div class = "dotted_bottom">
            
-        <%= f.link_to_add "+ Прекрепить изображение", :examplepics, :style => "width: 215px;" %>
+        <%= f.link_to_add "+ Add image", :examplepics, :style => "width: 215px;" %>
     </div>
    
   </div>
@@ -315,7 +1424,7 @@
       
   <div class = "forms_fild">  
       <div class ="inner_head_table"> 
-       <h3>Выберите инженерные сети, которые необходимо спроектировать</h3>
+       <h3>Select utilities that need to design</h3>
       </div>
      <%Engineering.all.each do |e|%>   
       <%= check_box_tag("engineering_#{e.id}",e.id) %>
@@ -326,483 +1435,10 @@
    <!-- ################################################конец Раздел 5   --> 
    
    
-    <!-- ################################################ F   --> 
-    
-<div id = "f">    
-   <div class = "forms_fild"> 
-   <div class = "inner_head_table">
-    <h3> <img src ="/images/f.png" > Жилое, частные апартаменты или коттедж <br /> Назначение помещений и количество людей</h3>
-     <br />
-   </div>
-    Семья из <input type= "texte" name="family_count" value = "" placeholder="2" class = "family_count number"> человек <br />
-    
-   </div>
-   
-  <%= f.fields_for :familys do |family| %>
-     <div class = "family_filds">
-      <div class = "forms_fild"> 
-       <table>
-        <tr> 
-          <td><%= family.label 'Имя' %></td>
-          <td><%= family.text_field :name %></td>
-        </tr>
-        <tr> 
-           <td><%= family.label 'Cемейный статус' %></td>
-           <td><%= family.text_field :status %></td>
-         </tr> 
-         <tr>
-          <td><%= family.label 'Возраст' %></td>
-          <td><%= family.text_field :age , :placeholder=> "25" , :class =>"number" %></td>
-         </td>
-         <tr>
-           <td><%= family.label 'Особые примечания' %></td>
-            <td><%= family.text_area :comment %></td>
-         </tr>   
-        </table>
-       </div> 
-     </div>  
-   <% end %>
-  
-  <p><%= f.link_to_add "+ Добавить", :familys, :class=>"family_add hidden" %></p> 
-    
-    
-    
-    
-    
-    
-    <div class = "head_table">
-     <h3>Обслуживающий персонал и гости:</h3>
-    </div> 
-  <div class = "forms_fild"> 
-    <b>4.1</b>
-      <table>
-        <tr>
-         <td><%= f.label 'Дополнительно-обслуживающий персонал из ' %></td>
-         <td><%= f.text_field :personal_count , :placeholder=> "2" , :class =>"number" %> человек</td>
-        </tr>
-        <tr>
-         <td><%= f.label 'По месту жительства' %></td>
-         <td><%= f.select( :personal_type, options_for_select([["приходящий", 'comming'], ["проживающий совместно", 'living']])) %></td>
-        </tr>
-      </table> 
-    </div>    
-        
-        
-   <div class = "forms_fild">
-  
-       <table>
-          <tr>
-           <td><b>4.2<%= f.label ' Гости в моём доме:' %></b></td>
-           <td><%= f.select( :guest_type, options_for_select([["очень часто", 'very_often'], ["изредка", 'occasionally'], ["нокогда", 'never']])) %></td>
-          </tr>
-          <tr> 
-           <td><%= f.label 'Максимальное количество гостей одновременно:' %></td>
-           <td><%= f.text_field :guest_max , :placeholder=> "10" , :class =>"number" %></td>
-          </tr>
-          <tr>
-            <td><%= f.label 'Из них могут остаться с ночевкой:' %></td>
-            <td><%= f.text_field :guest_night , :placeholder=> "4" , :class =>"number" %></td>
-          </tr>
-        </table>  
-    
-    </div>   
- </div>      
-       
-     <!-- ################################################ F   -->      
-       <!-- ################################################конец Раздел 6   --> 
-       
-       
-        <!-- ################################################ H   -->   
-   
- <div id = "h">      
-         <div class = "head_table">
-          <h3> <img src = "/images/h.png"> Жилое, отель или апартаменты под сдачу (аренду жилья)</h3>
-        </div> 
-        
-        <div class = "head_table" style = "margin-bottom: 20px;">
-         <p> Количество <b> типовых </b> номеров для отдельных апартаментов: 
-         <input type= "texte" name="apartments_count"  placeholder="3" class = "apartments_count number"> <br />
-          Перечислите <b>основные</b> необходимые элементы в каждом номере:</p>
-       </div>
-  
- 
- 
-        <%= f.fields_for :apartments do |apartment| %>
-         <div class = "apartments_filds">
-          <div class = "forms_fild"> 
-           
-            
-                Апартаменты:
-                 <%= apartment.text_field :a_name , :placeholder=> "Двухкомнатный люкс с кинотеатром" %>            
-                Площадь:
-                 <%= apartment.text_field :squere , :placeholder=> "108", :class =>"number" %>  
-                кв.м.
-                
-            
-            
-           <%= apartment.fields_for :rooms do |room| %>
-            <div class ="top_line">
-              <%= room.link_to_remove "delete", :style => "width: 40px;", :class => "pic_destroy_position" %>
-              <table>
-                <tr>
-                  <td>
-                   <%= room.label 'Помещение:' %>
-                  </td> 
-                  <td>
-                  <%= room.text_field :room_name , :placeholder=> "name" %> 
-                  <%= room.text_field :room_squere , :placeholder=> "36", :class => "number" %> кв.м <br />
-                  </td>
-                 </tr>
-                 
-                 <tr>
-                   <td>
-                     <%= room.check_box :double_beds %>
-                     <%= room.label 'Кровать для двоих' %>
-                    </td>
-                    <td>
-                     <%= room.check_box :two_twin_bads %>
-                     <%= room.label 'Две раздельные кровати' %>
-                    </td>
-                 </tr>
-                 <tr>
-                  <td>
-                   <%= room.check_box :tv %>
-                   <%= room.label 'TV' %>
-                  </td>
-                  <td>
-                    <%= room.check_box :bar %>
-                    <%= room.label 'Бар:' %>
-                  </td>
-                 </tr>
-                 
-                 <tr>
-                  <td> 
-                   <%= room.check_box :chair %>
-                   <%= room.label 'Кресло:' %>
-              
-                   <%= room.text_field :chair_count, :class => "number" %>
-                   <%= room.label 'шт' %>.
-                  </td>
-                  <td>
-                    <%= room.check_box :sofa %>
-                    <%= room.label 'Софа:' %>
-              
-                    <%= room.text_field :sofa_count, :class => "number" %>
-                    <%= room.label 'шт' %>.
-                  </td> 
-                </tr>
-                <tr> 
-                  <td>
-                   <%= room.check_box :desk %>
-                   <%= room.label 'Письменный стол' %>
-                  </td>
-                  <td>
-                   <%= room.check_box :cupboard %>
-                   <%= room.label 'Шкаф' %>
-                  </td> 
-                </tr> 
-              
-                <tr>
-                 <td>
-                  <%= room.check_box :stool %>
-                  <%= room.label 'Стулья:' %>
-              
-                  <%= room.text_field :stool_count, :class => "number" %>
-                  <%= room.label 'шт' %>.
-                 </td>
-                 <td>
-                  <%= room.check_box :wc %>
-                  <%= room.label '  WC:' %>
-              
-                  <%= room.text_field :wc_squere, :class => "number" %>
-                  кв. м.
-                 </td>  
-                </tr> 
-                <tr>
-              
-                  <td><%= room.label 'Изолированная' %></td>
-                 <td><%= room.check_box :isolation %></td>
-              
-                </tr>
-                
-                <tr>
-                 <td><%= room.label 'Гардеробная' %></td>
-                 <td><%= room.check_box :dressing_room %></td>
-                </tr>
-                
-                <tr>
-                 <td><%= room.label 'Кофейный столик' %></td> 
-                 <td><%= room.check_box :coffee_table %></td>
-                </tr>
-                <tr>
-                 <td><%= room.label 'Обеденный стол' %></td>
-                 <td><%= room.check_box :dining_table %></td> 
-                </td> 
-                
-                 <tr>
-                   <td>
-                    <%= room.check_box :other %>
-                    <%= room.label 'Другое:' %>
-                   </td>
-                   <td> 
-                    <%= room.text_field :other_fild, :placeholder=>"Комнытные растения" %>
-                   </td> 
-                 </tr>
-                 
-                  <tr>
-                   <td> <%= room.label 'Примечания' %></td>
-                   <td><%= room.text_area :comment %></td>
-                  </tr>
-                
-              </table>  
-              
-            </div>  
-           <%end%>
-           
-               <%= apartment.link_to_add "+ Добавить ещё одно помещение к номеру (апартаментам)", :rooms, :style => "width:400px;"  %> 
-           
-           
-           
-         </div> 
-        </div> 
-       <%end%> 
-         <p><%= f.link_to_add "+ Добавить", :apartments, :class=>"apartments_add hidden" %> </p>
-         
-   </div>      
-         
-      <!-- ################################################ H   --> 
-      
-         <!-- ################################################ B   --> 
-     
-   <div id = "b">  
-      <div class = "head_table">
-        <h3> <img src ="/images/b.png" > Офисное помещение </h3>
-        <h3>Структура офиса</h3>
-      </div>
-      <div class = "forms_fild"> 
-        
-        <%= f.fields_for :offices do |of| %>
-           <table class = "ofice_table"> 
-             <tr> 
-               <td>
-                 <%= of.check_box :hall %>
-                 <%= of.label 'Холл' %>
-            
-                 <%= of.check_box :hall_wc %>
-                 <%= of.label 'Оборудованный санузлом' %>
-                </td>
-                <td>
-                 <%= of.text_field :hall_count,:class => "number" %>
-                 <%= of.label 'Помещений' %>
-                </td>
-             </tr>
-              <tr>
-                <td>
-                 <%= of.check_box :head_cabinet %>
-                 <%= of.label 'Кабинет руководителя' %>, на
-                 
-                 <%= of.text_field :head_cabinet_piple,:class => "number" %>
-                 <%= of.label 'человек' %> + 
-                 
-                 <%= of.text_field :head_cabinet_goust,:class => "number" %>
-                 <%= of.label 'гостей' %>  
-                 
-                </td>
-                <td>
-                 <%= of.text_field :head_count,:class => "number" %>
-                 <%= of.label 'Помещений' %> 
-                </td>
-               </tr>
-               <tr>
-                 <td>
-                  <%= of.check_box :head_wc %>
-                  <%= of.label 'Оборудованный санузлом' %>
-                  
-                  <%= of.check_box :head_shower %>
-                  <%= of.label 'Включить душевую' %>
-                 </td> 
-               </tr>
-               
-               <tr>
-                 <td>
-                  <%= of.check_box :waiting_room %>
-                  <%= of.label 'Приёмная (секретарь) для ' %>
-                 
-                 
-                  <%= of.text_field :waiting_room_piple,:class => "number" %>
-                  <%= of.label 'посетителей' %> 
-                 </td>
-                 <td>
-                  <%= of.text_field :waiting_room_count,:class => "number" %>
-                  <%= of.label 'Помещений' %> 
-                 </td>
-               </tr>
-               
-               <tr>
-                 <td>
-                  <%= of.check_box :expert_room %>
-                  <%= of.label 'Кабинет специалиста, на' %>
-                 
-                 
-                  <%= of.text_field :expert_room_piple,:class => "number" %>
-                  <%= of.label 'человек' %> 
-                 </td>
-                 <td>
-                  <%= of.text_field :expert_room_count,:class => "number" %>
-                  <%= of.label 'Помещений' %> 
-                 </td>
-               </tr>
-             
-               <tr>
-                 <td>
-                  <%= of.check_box :expert_jr_room %>
-                  <%= of.label 'Кабинет младшего специалиста, на' %>
-                 
-                 
-                  <%= of.text_field :expert_jr_piple,:class => "number" %>
-                  <%= of.label 'человек' %> 
-                 </td>
-                 <td>
-                  <%= of.text_field :expert_jr_count,:class => "number" %>
-                  <%= of.label 'Помещений' %> 
-                 </td>
-               </tr>
-               
-               <tr>
-                 <td>
-                  <%= of.check_box :conf_hall %>
-                  <%= of.label 'Конференц зал, вместимостью' %>
-                 
-                 
-                  <%= of.text_field :conf_hall_piple,:class => "number" %>
-                  <%= of.label 'человек' %> 
-                 </td>
-                 <td>
-                  <%= of.text_field :conf_hall_count,:class => "number" %>
-                  <%= of.label 'Помещений' %> 
-                 </td>
-               </tr>
-               
-               <tr>
-                 <td>
-                  <%= of.check_box :private_room %>
-                  <%= of.label 'Приватная комната переговоров, для ' %>
-                 
-                 
-                  <%= of.text_field :private_room_piple,:class => "number" %>
-                  <%= of.label 'человек' %> 
-                 </td>
-                 <td>
-                  <%= of.text_field :private_room_count,:class => "number" %>
-                  <%= of.label 'Помещений' %> 
-                 </td>
-               </tr>
-               
-                   <tr>
-                 <td>
-                  <%= of.check_box :operation_hall %>
-                  <%= of.label 'Операционный зал, на ' %>
-                 
-                 
-                  <%= of.text_field :operation_hall_piple,:class => "number" %>
-                  <%= of.label 'человек' %> 
-                 </td>
-                 <td>
-                  <%= of.text_field :operation_hall_count,:class => "number" %>
-                  <%= of.label 'Помещений' %> 
-                 </td>
-               </tr>
-             
-               <tr>
-                 <td class = "no_border">
-                  <%= of.check_box :restroom %>
-                  <%= of.label 'Комната отдыха для сотрудников, до  ' %>
-                  
-                  <%= of.text_field :restroom_squere,:class => "number" %>
-                  кв.м.
-                  
-                 
-                 </td> 
-                </tr> 
-                
-                <tr>
-                  <td>
-                   <%= of.check_box :restroom_wc %>
-                   <%= of.label 'Оборудовать санузлом' %>
-                  
-                   <%= of.check_box :restroom_shower %>
-                   <%= of.label 'Включая душевую' %>
-                  
-                   <%= of.check_box :restroom_kitchen %>
-                   <%= of.label 'Кухня-столовая' %>
-                   </td>
-               </tr>
-               
-               <tr>
-                 <td class = "no_border">
-                   <%= of.check_box :trading_hall %>
-                   <%= of.label 'Выставочно - торговая площадь' %>
-                   
-                   <%= of.text_field :trading_hall_squere,:class => "number" %>
-                  кв.м.
-                 </td>
-               </tr>
-               
-               <tr>
-                 <td>
-                    <%= of.label '- Специфика продукции' %>
-                    <%= of.text_area :trading_specify %> 
-                 </td>               
-               </tr>
-               
-               <tr>
-                 <td class = "no_border">
-                   <%= of.check_box :more_hall %>
-                   <%= of.label 'Дополнительные помещения, которые следует учесть в проекте' %>
-                 </td>
-               </tr>
-               
-               <tr>
-                 <td class = "no_border">
-                   <%= of.check_box :cafe %>
-                   <%= of.label 'Кафе/ресторан' %>
-                   
-                   <%= of.check_box :dressing %>
-                   <%= of.label 'Гардеробная комната' %>
-                   
-                   <%= of.check_box :safe %>
-                   <%= of.label 'Комната-сейф' %>                   
-                 </td>
-                 
-                 </tr>
-                 
-                 <tr>
-                   <td class = "no_border">
-                     <%= of.check_box :security_hall %>
-                     <%= of.label 'Помещение для видеонаблюдения/охраны' %>
-                   </td>
-                 </tr>
-                 
-                 <tr>
-                   <td class = "no_border">
-                     <%= of.check_box :server_room %>
-                     <%= of.label 'Серверное помещение (компютеры)' %>
-                     
-                     <%= of.check_box :warehouse %>
-                     <%= of.label 'Склад' %>
-                   </td>
-                 </tr>              
-               
-           </table>   
-        <%end%>
-         <%= f.link_to_add "", :offices, :class => "click hidden"  %>
-      </div>
-   </div>     
-       <!-- ################################################ B  --> 
-      <div class ="forms_fild"> 
+  <div class ="forms_fild"> 
        <div class = "inner_head_table">
-        <p>После оформления заявки наш специалист свяжется с Вами в течении суток, ответит на Ваши вопросы и договорится о встрече. Будем рады видеть Вас в числе наших клиентов. </p>
-        <%= f.submit "Отправить", :class => "buttom" %>
+        <p>After your request, our specialist will contact you within 24 hours, answer your questions and arrange a meeting. We will be glad to see you among our clients. </p>
+        <%= f.submit "Send", :class => "buttom" %>
        </div> 
       </div> 
  </div>      
