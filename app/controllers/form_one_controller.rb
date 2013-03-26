@@ -6,7 +6,7 @@ class FormOneController < ApplicationController
     respond_to do |format|
       format.html 
       format.json { render json: @customer }
-      format.pdf  {  render :pdf => "show", :header => { :right => '[page] of [topage]' } }
+      
     end
   end
 
