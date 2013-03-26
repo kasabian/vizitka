@@ -1,11 +1,11 @@
   
   <div class = "head">
-   <h3>Oreder form №1</h3>
+   <h3>Oreder form</h3>
    (reservation required)
   </div>
   
   <div class = "logo">
-    <img src = "/logo.png">
+    <%=link_to image_tag("/logo.png"), home_index_path%>
   </div>
   
 <%= nested_form_for(@customer, :url => form_one_index_path, :method => "post") do |f| %>
@@ -783,12 +783,7 @@
         
          <p><%= f.link_to_add "+ Добавить", :restaurants, :class => "click hidden"%></p> 
         
-        
-      
-     
-       
-   
-   
+    
    </div>
    <!-- ################################################ конец R   -->
    
@@ -800,7 +795,7 @@
 <div id = "f">    
    <div class = "forms_fild"> 
    <div class = "inner_head_table">
-    <h3> <img src ="/images/f.png" >Residential, private apartment or cottages <br />Appointment of premises and the number of people :</h3>
+    <h3> <img src ="/images/f.png" > Residential, private apartment or cottages <br />Appointment of premises and the number of people :</h3>
      <br />
    </div>
     Family of  <input type= "texte" name="family_count" value = "" placeholder="5" class = "family_count number"><br />
@@ -862,7 +857,7 @@
   
        <table>
           <tr>
-           <td><b>4.2<%= f.label 'Guests in my house:' %></b></td>
+           <td><b>4.2<br /><%= f.label 'Guests in my house:' %></b></td>
            <td><%= f.select( :guest_type, options_for_select([["very_often", 'very_often'], ["occasionally", 'occasionally'], ["never", 'never']])) %></td>
           </tr>
           <tr> 

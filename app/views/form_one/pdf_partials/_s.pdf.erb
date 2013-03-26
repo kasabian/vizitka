@@ -1,0 +1,266 @@
+ <div class = "head_table">
+         
+         <%= wicked_pdf_image_tag "/images/s.png" %> 
+         <h3> Shop/boutique</h3>
+         <h3> Appointment of premises and the number of people:</h3>
+       </div>
+       
+       <% customer.shops.all.each do |shop| %>
+         <div class = "pdf_fild">
+            <table>
+              <tr>
+                <td>
+                  <b>The proposed name</b>
+                  <%=text_none shop.people_name %>,    
+                </td>
+              </tr>
+              
+               <tr>
+                <td>
+                  <b>Total area:</b> 
+                  <%=text_none shop.people_area %>sq. m.,
+                  
+                  <b>From them service spaces :</b> 
+                  <%=text_none shop.people_service%>sq. m.
+                </td>
+              </tr>
+              
+              
+            </table>
+         </div>
+         
+         
+         <div class="pdf_fild">
+          <div class ="inner_head_table">
+            <h3>Specify the product groups:</h3>
+          </div>
+          <table>
+          
+             <tr>
+               <td>
+                 <b>Clothing</b>
+                 <%=yes_no shop.specify_clothing%>;
+                 
+                 <b>Accessories</b>
+                 <%=yes_no shop.specify_accessories%>;
+                 
+                 
+                 <b>Shoes</b>
+                 <%=yes_no shop.specify_shoes%>;
+                 
+                 
+                 <b>Perfumes</b>
+                 <%=yes_no shop.specify_perfumes%>;
+                 
+                 
+                 <b>Watches & jewelry</b>
+                 <%=yes_no shop.specify_watch%>;
+                 
+               </td> 
+             </tr>
+             
+             <tr>
+               <td>
+                 <b>Auto-Moto Technics</b>
+                 <%=yes_no shop.specify_auto%>;
+                 
+                 <b>Furniture, plumbing fixtures, light</b>
+                 <%=yes_no shop.specify_furniture%>;
+                 
+                 <b>Sporting goods and apparel</b>
+                 <%=yes_no shop.specify_sport%>;
+                 
+               </td> 
+             </tr>
+             
+             <tr>
+               <td>
+                 <b>Music, video, books</b>
+                 <%=yes_no shop.specify_music%>;
+                 
+                 
+                 <b>Electronics</b>
+                 <%=yes_no shop.specify_electronics%>;
+                 
+                 <b>Homeware</b>
+                 <%=yes_no shop.specify_homeware%>;
+                 
+                 
+                 <b>Children goods</b>
+                 <%=yes_no shop.specify_children%>;
+                 
+                 
+                 <b>Works of art</b>
+                 <%=yes_no shop.specify_art%>;
+                 
+               </td> 
+             </tr>
+             
+             
+             <tr>
+               <td>
+                 <b>Musical instruments</b>
+                 <%=yes_no shop.specify_instrum%>;
+                 
+                 
+                 <b>Products & household chemical goods</b>
+                 <%=yes_no shop.specify_products%>;
+                 
+               </td> 
+             </tr>
+             
+             
+              <tr>
+               <td>
+                 <b>Add your comment:</b>
+                 <%=text_none shop.specify_comments%>  
+
+               </td> 
+             </tr>
+          </table>
+         </div>
+         
+         <div class = "pdf_fild">
+          <div class = "inner_head_table">
+            <h3> Key elements in the area and premises: </h3>
+          </div>
+          
+          <table>
+            <tr>
+              <td>
+                 
+                 <b>Hall or reception on</b>
+                 <%=yes_no shop.el_hall%>;                 
+                 <%=text_none shop.el_hall_count  %> managers, 
+                 
+                 <b>Cash zone</b>
+                 <%=yes_no shop.el_cash%>;                 
+                 <%= shop.el_cash_count  %> persons,
+                                               
+              </td>
+            </tr>
+            
+            
+            <tr>
+              <td>
+                 
+                 <b>The main trading Hall</b>
+                 <%=yes_no shop.el_main%>;
+                 
+                 <b>additional sales hall</b>
+                 <%=yes_no shop.el_sales%>;
+                 
+                 
+                 <b>Bar zone (coffee, drinks)</b>
+                 <%=yes_no shop.el_bar%>;         
+               
+                                               
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                 
+                 <b>Soft zone</b>
+                 <%=yes_no shop.el_soft%>;
+                 
+                 <%=text_none shop.el_soft_count  %> sofas/chair,
+                 
+                 
+                 <b>Podium for the displays and demonstrations</b>
+                 <%=yes_no shop.el_podium%>;
+                           
+                                               
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                 
+                 <b>Fitting rooms</b>
+                 <%=yes_no shop.el_fitting%>;
+                 
+
+                 <b>place for negotiations</b>
+                 <%=yes_no shop.el_plase%>;
+                 
+                 
+                 <b>A Bathroom</b>
+                 <%=yes_no shop.el_bathroom%>;
+                 
+                 <b>Children\'s area</b>
+                 <%=yes_no shop.el_children%>;
+                 
+                 
+                 <b>Tv</b>
+                 <%=yes_no shop.el_tv%>;                
+                 <%=text_none shop.el_tv_count%> pcs.
+                                               
+              </td>
+            </tr>
+            
+            
+            <tr>
+              <td>
+                 <b>Add your comment:</b>
+                 <%=text_none shop.el_comments %> 
+                                               
+              </td>
+            </tr>
+            
+          </table>
+          
+         </div>
+         
+         
+         <div class = "pdf_fild">
+           <div class = "inner_head_table">
+             <h3>Requirements</h3>
+           </div>
+           
+           <table>
+             <tr>
+               <td>
+                 <b>Office space on</b>
+                 <%=yes_no shop.requir_office%>;                 
+                 <%=text_none shop.requir_office_count %> staff,
+                 
+                 
+                 <b>Separate entrance</b>
+                 <%=yes_no shop.requir_separate%>;
+                 
+               </td>
+             </tr>
+             
+             
+             <tr>
+               <td>
+               
+                 <b>Premises for security service</b>
+                 <%=yes_no shop.requir_sequrity%>;
+                 
+                 
+                 <b>Recreation room (locker room) for staff</b>
+                 <%=yes_no shop.requir_recreation%>;
+                 
+                 <b>Head office of the chief</b>
+                 <%=yes_no shop.requir_head%>;
+                 
+                 
+                 
+               </td>
+             </tr>
+             
+             <tr>
+               <td>
+                 <b>Add your comment:</b>
+                 <%=text_none shop.requir_comments%>
+              </td>
+             </tr>
+             
+           </table>
+           
+         </div>
+         
+         
+       <%end%>

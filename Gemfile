@@ -16,6 +16,8 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'cancan'
 gem 'nested_form'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 
 
