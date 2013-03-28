@@ -8,7 +8,7 @@ gem 'rails', '3.2.9'
 
   gem 'pg'
 
-# #      gem 'mysql2'
+#      gem 'mysql2'
 gem 'rails-backbone'
 gem 'carrierwave'
 gem 'rmagick'
