@@ -31,11 +31,60 @@
 		 <div class= "left_line"></div>
 	   </div>  
 	  <div id="content">
-	   
+	    
+	     
 	    
 	    <div class = "text_block" id="content_1">
 	      <h4 style = "text-align:center; color:white;">aa</h4>
 	      <p class = "content_text"> aaaa </p>
+	      
+	       <div id = menu_with_forms>
+	       
+	       
+	         <table class = "order">
+	       
+	           <tr>
+	             <td class = "order_text">
+	               <%= link_to  "Fill in the application form “Schematic Design”", form_one_index_path %>
+	             </td>
+	             <td>
+	               <%= image_tag "/write_leter.png", :width => "50"%>
+	             </td>
+	           </tr>
+	           
+	           <tr>
+	             <td class = "order_text">
+	               <%= link_to  "Fill in the application form “Design Project”", form_one_index_path %>
+	             </td>
+	             <td>
+	               <%= image_tag "/write_leter.png", :width => "50"%>
+	             </td>
+	           </tr>
+	           
+	           <tr>
+	             <td class = "order_text">
+	               <%= link_to  "Fill in the application form “Schematic Design”", form_two_index_path %>
+	             </td>
+	             <td>
+	               <%= image_tag "/write_leter.png", :width => "50"%>
+	             </td>
+	           </tr>
+	           
+	           <tr>
+	             <td class = "order_text">
+	               <%= link_to  "Fill in the application form “Design Project”", form_three_index_path %>
+	             </td>
+	             <td>
+	               <%= image_tag "/write_leter.png", :width => "50"%>
+	             </td>
+	           </tr>
+	           
+	           
+	       
+	       </table>
+	       
+	       
+	       </div>
 	      
 	    </div>
 	  </div>
@@ -51,6 +100,7 @@
  
  </div> 
  <%= yield %>
+
 
  
  </body>

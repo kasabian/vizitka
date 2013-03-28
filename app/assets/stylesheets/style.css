@@ -52,11 +52,11 @@
     {
     height: 250px;
     margin-right: 23px;
-    margin-top: 222px;
+    margin-top: 260px;
     padding-top: 10px;
     position: absolute;
-    width: 210px;
-    margin-left: -40px;
+    width: 230px;
+    margin-left: -80px;
   }
   
   #left_side  .pod_left_menu ul
@@ -114,8 +114,8 @@
     font-family: Arial;
     font-size: 16px;
     padding-right: 35px;
-    padding-top: 40px;
-    text-align: right;
+    padding-top: 50px;
+    text-align: left;
   }
   
   
@@ -123,7 +123,7 @@
     {
     height: 184px;
     margin-left: 135px;
-    margin-top: 300px;
+    margin-top: 285px;
     padding-left: 0;
     position: absolute;
     width: 106px;
@@ -266,5 +266,32 @@ outline: none;
     position: absolute;
     width: 130px;
     text-shadow: 1px 2px 6px black;
+    text-align:right;
     
   }
+  
+  
+  .order
+  {
+    color: #92D050;
+    font-size: 10px;
+    font-weight: bold;
+    text-shadow: 1px 2px 6px black;
+    margin-left:125px;
+  }
+  
+  .order_text
+  {
+    width: 130px;
+    text-align:right;
+    padding-top: 30px;
+    font-size: 10px;
+  }
+  
+  .order_text a
+  {
+    color: #92D050;
+  }
+  
+  
+ 

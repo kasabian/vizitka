@@ -21,6 +21,8 @@ class FormOneController < ApplicationController
     @customer.check_fild params, @customer.epcbads, Epcbad, "epcbad_"
     respond_to do |format|
       if @customer.save
+	Mailer.send_email(@customer).deliver
+
         format.html {render "show"}
         format.json { render json: @customer, status: :created, location: @customer }
 	

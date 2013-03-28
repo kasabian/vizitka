@@ -9,18 +9,19 @@
 
 
  
-  Menu.create("name" => "company","ps_name" =>"О компании ")
-  Menu.create("name" => "services","ps_name" =>"Услуги")
-  Menu.create("name" => "exclusive","ps_name" =>"Эксклюзивное проектирование") 
-  Menu.create("name" => "design_project","ps_name" =>"Дизайн проект")
-  Menu.create("name" => "architecture","ps_name" =>"Архитектурное и инженерное проект...")
-  Menu.create("name" => "industrial","ps_name" =>"Промышленный дизайн") 
-  Menu.create("name" => "contacts","ps_name" =>"Контакты")
+  Menu.create("name" => "company","ps_name" =>"About company")
+  Menu.create("name" => "services","ps_name" =>"Service")
+  Menu.create("name" => "contacts","ps_name" =>"Contacts")
+  Menu.create("name" => "exclusive","ps_name" =>"Schematic Design") 
+  Menu.create("name" => "design_project","ps_name" =>"Design Project")
+  Menu.create("name" => "architecture","ps_name" =>"Architectural and Engineering Design")
+  Menu.create("name" => "industrial","ps_name" =>"Indastrial Design") 
+  
  
  
-  Gallery.create("name"=>"architecture","ps_name" =>"Архитектура")
-  Gallery.create("name"=>"design","ps_name" =>"Дизайн интерьера")
-  Gallery.create("name"=>"industrial","ps_name" =>"Промышленный дизайн")
+  Gallery.create("name"=>"architecture","ps_name" =>"Architecture")
+  Gallery.create("name"=>"design","ps_name" =>"Interior Design")
+  Gallery.create("name"=>"industrial","ps_name" =>"Indastrial Design")
 
   Setting.create()
   

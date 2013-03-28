@@ -1,10 +1,14 @@
 Vizitka::Application.routes.draw do
   
 
+
+  
+  resources :form_three, :only => [:index]
+  resources :form_two, :only => [:index]
   resources :form_one, :only => [:index, :create, :show]
 #   match "/admin/users/sign_up" => "home#index"
   get "home/index" 
-  match "/admin" => "home#admin" 
+  match "/admin" => "home#admin"
   
   scope "/admin" do
    devise_for :users, :controllers => { :sessions => 'users' }

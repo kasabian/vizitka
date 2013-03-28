@@ -13,6 +13,7 @@ class Vizitka.Routers.MenusRouter extends Backbone.Router
     "company"  : "company"
     "services" : "services"
     "contacts" : "contacts"
+    "orders"    : "orders"
     "index"    : "index"
 # ++++++++++Gallery++++++++++++++++++++++++++++
     "architecture_design" : "architecture_design"
@@ -20,12 +21,25 @@ class Vizitka.Routers.MenusRouter extends Backbone.Router
     "industrial_design" : "industrial_design"
     ".*"       : "index"
 # ++++++++++Menu++++++++++++++++++++++++++++   
+  orders: ->    
+    @clear()
+    a= () ->  
+     $("#content h4").html("")
+     $("#content .content_text").html("")
+     $(".order").show()   
+     
+    $("#left_side").animate({"margin-left":"-50px"},800,"linear",a)
+    $("#right_side").animate({"margin-left":"250px"},800)
+    @open_side()
+  
   company: ->
+    $(".order").hide()
     @clear()
     @close_side(@menus.where({"name":"company"})[0])
     @open_side()
  
   services: ->
+    $(".order").hide()
     a= () ->  
      $(".pod_left_menu").show()
     @close_side(@menus.where({"name":"services"})[0])
@@ -34,51 +48,60 @@ class Vizitka.Routers.MenusRouter extends Backbone.Router
     
     
   contacts: ->
+   $(".order").hide()
    @clear()
    @close_side(@menus.where({"name":"contacts"})[0])
    @open_side()  
 
   index: ->
+   $(".order").hide()
    @clear()
    @close_side(@menus.where({"name":"contacts"})[0])
  #+++++++++++++++++pod_menu++++++++++++++++++++  
   exclusive: ->
-   str = "Заполнить заявку «эскизное проектирование»"
+   $(".order").hide()
+   str = "<a href = '/form_one'>Заполнить заявку «эскизное проектирование»</a>"
    $("#order").html(str);
    @close_side(@menus.where({"name":"exclusive"})[0])
    @open_side() 
    
   design_project: ->
-   str = "Заполнить заявку «дизайн проект»"
+   $(".order").hide()
+   str = "<a href = '/form_one'>Заполнить заявку «дизайн проект»</a>"
    $("#order").html(str);
    @close_side(@menus.where({"name":"design_project"})[0])
    @open_side()
     
   architecture: ->
-   str = "Заполнить заявку на «архитектурное проектирование» <br /><br /> Заполнить заявку на «архитектурное инженерное проектирование»"
+   $(".order").hide()
+   str = "<a href = '/form_one'> Заполнить заявку на «архитектурное проектирование» <br /><br /> Заполнить заявку на «архитектурное инженерное проектирование» </a>"
    $("#order").html(str);
    @close_side(@menus.where({"name":"architecture"})[0])
    @open_side() 
   
   industrial: ->
-   str = "Заполнить заявку «промышленный дизайн»"
+   $(".order").hide()
+   str = "<a href = '/form_one'> Заполнить заявку «промышленный дизайн»</a>"
    $("#order").html(str);
    @close_side(@menus.where({"name":"industrial"})[0])
    @open_side() 
 
 # ++++++++++Gallery++++++++++++++++++++++++++++
-  architecture_design:  ->  
+  architecture_design:  ->
+    $(".order").hide()
     @clear()  
     @close_side(@gallery.where({"name":"architecture"})[0],"image")
     @open_side()
     
     
   design: ->
+    $(".order").hide()
     @clear()   
     @close_side(@gallery.where({"name":"design"})[0],"image")
     @open_side()
     
   industrial_design: ->
+    $(".order").hide()
     @clear()   
     @close_side(@gallery.where({"name":"industrial"})[0],"image")
     @open_side() 
@@ -99,6 +122,7 @@ class Vizitka.Routers.MenusRouter extends Backbone.Router
     true
   
   close_side:(m,type) ->
+    
     f = @change_text
     if (type=="image") 
      f = @change_image
@@ -114,7 +138,9 @@ class Vizitka.Routers.MenusRouter extends Backbone.Router
     
   clear: ()->
    $(".pod_left_menu").hide()
-   $("#order").html("")
+   str = "<a href = '#orders'>Fill in the application form</a>"
+   $("#order").html(str);
+#    $("#order").html("")
 
     
     
