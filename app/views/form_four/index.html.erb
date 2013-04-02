@@ -8,7 +8,7 @@
     <%=link_to image_tag("/logo.png"), home_index_path%>
   </div>
   
-<%= nested_form_for(@customer, :url => form_one_index_path, :method => "post") do |f| %>
+<%= nested_form_for(@customer, :url => form_four_index_path, :method => "post") do |f| %>
 
 
 
@@ -1417,18 +1417,7 @@
   </div>
  <!-- ################################################конец Раздел 4   -->
       
-  <div class = "forms_fild">  
-      <div class ="inner_head_table"> 
-       <h3>Select utilities that need to design</h3>
-      </div>
-     <%Engineering.all.each do |e|%>   
-      <%= check_box_tag("engineering_#{e.id}",e.id) %>
-      <%= e.name  %><br />
-    <%end%>
-   
-  </div> 
-   <!-- ################################################конец Раздел 5   --> 
-   
+ 
    
   <div class ="forms_fild"> 
        <div class = "inner_head_table">

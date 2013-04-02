@@ -10,7 +10,7 @@
 		
 setInterval(function()
 {
- $(".group1").colorbox({rel:'group1', current: "фото {current} из {total}"});
+ $(".group1").colorbox({rel:'group1', current: "foto {current} of {total}"});
  var h = ($(window).height() - 500)/2;
  $("#main").css("margin-top",h) 
  $("#content_1").mCustomScrollbar("update")

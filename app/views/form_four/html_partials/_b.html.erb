@@ -1,0 +1,236 @@
+<% of = customer.offices.first %>
+  <div class = "head_table">
+        <h3> <img src ="/images/b.png" > Office space </h3>
+        <h3>The structure of the Office:</h3>
+      </div>
+      <div class = "forms_fild"> 
+        
+           <table class = "ofice_table"> 
+             <tr> 
+               <td>
+                 <b>hall:</b>
+                 <%=yes_no of.hall %>;
+                 
+                 <b>To equip a bathroom:</b>
+                 <%=yes_no of.hall_wc %>;
+                 
+                </td>
+                <td>
+                 <%=text_none of.hall_count%>
+                 Premises
+                </td>
+             </tr>
+              <tr>
+                <td>
+                 <b>Cabinet for:</b>
+                 <%=yes_no of.head_cabinet %>;
+                 
+                 
+                 <%=text_none of.head_cabinet_piple %>
+                  person + 
+                 
+                 <%=text_none of.head_cabinet_goust %>
+                 guests  
+                 
+                </td>
+                <td>
+                 <%=text_none of.head_count%>
+                 Premises 
+                </td>
+               </tr>
+               <tr>
+                 <td>
+                  <b>fitted bathroom</b>
+                  <%=yes_no  of.head_wc %>;
+                  
+                  <b>including shower </b>
+                  <%= yes_no of.head_shower %>;
+                  
+                 </td> 
+               </tr>
+               
+               <tr>
+                 <td>
+                  <b>Reception secretary for </b>
+                  <%=yes_no of.waiting_room %>;
+                  
+                  <%=text_none of.waiting_room_piple%>
+                  visitors 
+                 </td>
+                 
+                 <td>
+                  <%=text_none of.waiting_room_count %>
+                  Premises 
+                 </td>
+               </tr>
+               
+               <tr>
+                 <td>
+                  <b>cabinet top manager for</b> 
+                  <%=yes_no of.expert_room %>;
+                  
+                 
+                 
+                  <%=text_none of.expert_room_piple%>
+                  person 
+                 </td>
+                 <td>
+                  <%=text_none of.expert_room_count%>
+                  Premises 
+                 </td>
+               </tr>
+             
+               <tr>
+                 <td>
+                  <b>cabinet middle manager for</b>
+                  <%=yes_no of.expert_jr_room %>;
+                  
+                 
+                 
+                  <%=text_none of.expert_jr_piple%>
+                  person 
+                 </td>
+                 <td>
+                  <%=text_none of.expert_jr_count %>
+                  Premises 
+                 </td>
+               </tr>
+               
+               <tr>
+                 <td>
+                  <b>meeting room for</b>
+                  <%= yes_no of.conf_hall %>;
+                 
+                 
+                 
+                  <%=text_none of.conf_hall_piple %>
+                  person
+                 </td>
+                 <td>
+                  <%=text_none of.conf_hall_count %>
+                  Premises 
+                 </td>
+               </tr>
+               
+               <tr>
+                 <td>
+                  <b>private room for negotiation</b>
+                  <%=yes_no of.private_room %>;
+                  
+                 
+                 
+                  <%=text_none of.private_room_piple %>
+                  person
+                 </td>
+                 <td>
+                  <%=text_none of.private_room_count %>
+                  Premises
+                 </td>
+               </tr>
+               
+                   <tr>
+                 <td>
+                  <b>Operating room on</b>
+                  <%= yes_no of.operation_hall %>;
+                  
+                 
+                 
+                  <%=text_none of.operation_hall_piple %>
+                  person 
+                 </td>
+                 <td>
+                  <%=text_none of.operation_hall_count%>
+                  Premises
+                 </td>
+               </tr>
+             
+               <tr>
+                 <td class = "no_border">
+                 
+                  <b>rest room:</b>
+                  <%=yes_no of.restroom %>;
+                  
+                  
+                  <%=text_none of.restroom_squere%> sq.m.
+                  
+                 
+                 </td> 
+                </tr> 
+                
+                <tr>
+                  <td>
+                   <b>equipped bathroom</b>
+                   <%=yes_no of.restroom_wc %>;
+                   
+                  
+                   <b>including shower</b>
+                   <%=yes_no of.restroom_shower %>;
+                   
+                   <b>Kitchen-dining room:</b>
+                   <%=yes_no of.restroom_kitchen %>;
+                 </td>
+               </tr>
+               
+               <tr>
+                 <td class = "no_border">
+                   <b>trade exhibition area:</b>
+                   <%=yes_no of.trading_hall %>;
+                   
+                   
+                   <%=text_none of.trading_hall_squere %> sq.m.
+                 </td>
+               </tr>
+               
+               <tr>
+                 <td>
+                    <b> Product specification</b>
+                    <%=text_none of.trading_specify %> 
+                 </td>               
+               </tr>
+               
+               <tr>
+                 <td class = "no_border">
+                   <b>Additional facilities that should be included in the project:</b>
+                   <%=yes_no of.more_hall %>;                 
+                 </td>
+               </tr>
+               
+               <tr>
+                 <td class = "no_border">
+                   <b>Cafe/restaurant</b>
+                   <%=yes_no of.cafe %>;
+                   
+                   <b>dressing room:</b>
+                   <%=yes_no of.dressing %>;
+                  
+                   <b>room-safe:</b> 
+                   <%=yes_no of.safe %>;
+                                     
+                 </td>
+                 
+                 </tr>
+                 
+                 <tr>
+                   <td class = "no_border">
+                     <b>CCTV/security area:</b>
+                     <%=yes_no of.security_hall %>;
+                     
+                   </td>
+                 </tr>
+                 
+                 <tr>
+                   <td class = "no_border">
+                     <b>Server:</b>
+                     <%=yes_no of.server_room %>;
+                     
+                     <b>warehouse</b>
+                     <%= yes_no of.warehouse %>;
+                     
+                     
+                   </td>
+                 </tr>              
+               
+           </table>   
+
+      </div>
+  

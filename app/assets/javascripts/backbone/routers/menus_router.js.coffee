@@ -60,28 +60,33 @@ class Vizitka.Routers.MenusRouter extends Backbone.Router
  #+++++++++++++++++pod_menu++++++++++++++++++++  
   exclusive: ->
    $(".order").hide()
-   str = "<a href = '/form_one'>Заполнить заявку «эскизное проектирование»</a>"
+   str = "<a href = '/form_four'>Fill in the application form “Schematic Design”</a>"
    $("#order").html(str);
    @close_side(@menus.where({"name":"exclusive"})[0])
    @open_side() 
    
   design_project: ->
    $(".order").hide()
-   str = "<a href = '/form_one'>Заполнить заявку «дизайн проект»</a>"
+   str = "<a href = '/form_four'>Fill in the application form “Design Project”</a> <br /><br /> <a href = '/form_one'>
+    Fill in the application form “Design Project + Building Services”</a>"
+    
    $("#order").html(str);
    @close_side(@menus.where({"name":"design_project"})[0])
    @open_side()
     
   architecture: ->
    $(".order").hide()
-   str = "<a href = '/form_one'> Заполнить заявку на «архитектурное проектирование» <br /><br /> Заполнить заявку на «архитектурное инженерное проектирование» </a>"
+   str = "<a href = '/form_three'>Fill in the application form “Architectural Design”</a> <br /><br /> <a href = '/form_two'>
+   Fill in the application form “Architectural and Engineering Design”</a>"
+   
+   
    $("#order").html(str);
    @close_side(@menus.where({"name":"architecture"})[0])
    @open_side() 
   
   industrial: ->
    $(".order").hide()
-   str = "<a href = '/form_one'> Заполнить заявку «промышленный дизайн»</a>"
+   str = "<a href = '/form_two'> Fill in the application form “Industrial Design”</a>"
    $("#order").html(str);
    @close_side(@menus.where({"name":"industrial"})[0])
    @open_side() 
