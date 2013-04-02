@@ -215,14 +215,14 @@
  <div class = "head_table">
     <h3>Section 4. Examples of solutions</h3>
  </div>
- <div >
+ <div class = "pdf_fild img_pdf_fild">
    <div class="inner_head_table">
       <h3>pictures like</h3>
    </div> 
   
    <div style = "min-height:100px;">      
      <%@customer.epcs.all.each do |epc|%>
-        <div style = "float:left; margin:5px; height: 135px;">
+        <div style = "float:left; margin:5px;">
         
                 <%= wicked_pdf_image_tag(epc.image,:width => "150") %> <br />
 
@@ -236,14 +236,14 @@
  
   <!--  #################################################################### -->
  
- <div >
+ <div class = "pdf_fild img_pdf_fild">
    <div class="inner_head_table">
       <h3>pictures not like</h3>
    </div> 
   
    <div style = "min-height:100px;">      
      <%@customer.epcbads.all.each do |epc|%>
-        <div style = "float:left; margin:5px; height: 135px;">
+        <div style = "float:left; margin:5px;">
         
           <%= wicked_pdf_image_tag(epc.image,:width => "150") %> <br />
 
@@ -260,8 +260,8 @@
   <!--  #################################################################### -->
  
 
- <div >
-   <div >
+ <div class = "pdf_fild  img_pdf_fild">
+   <div class = "inner_head_table">
     <h3>download pictures</h3>
  </div>
    <div style = "min-height:300px;"> 
@@ -303,7 +303,6 @@
  
 
 <!--  #################################################################### -->
-
 
 
 
