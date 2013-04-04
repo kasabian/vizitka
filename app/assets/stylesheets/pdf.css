@@ -1,0 +1,27 @@
+
+
+ .pdf_fild
+ {
+   margin: 20px;
+   padding: 10px;
+   overflow: hidden; 
+   /*    border: 1px solid #6387B5; */
+
+ }
+ 
+ table
+ {
+   font-size: 10px;
+ }
+ 
+ .img_pdf_fild
+ {
+/*   min-height: 400px */
+ }
+ 
+ b
+ {
+    color:#6387B5;
+ }
+
+ 

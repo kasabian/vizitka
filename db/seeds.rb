@@ -9,18 +9,19 @@
 
 
  
-  Menu.create("name" => "company","ps_name" =>"О компании ")
-  Menu.create("name" => "services","ps_name" =>"Услуги")
-  Menu.create("name" => "exclusive","ps_name" =>"Эксклюзивное проектирование") 
-  Menu.create("name" => "design_project","ps_name" =>"Дизайн проект")
-  Menu.create("name" => "architecture","ps_name" =>"Архитектурное и инженерное проект...")
-  Menu.create("name" => "industrial","ps_name" =>"Промышленный дизайн") 
-  Menu.create("name" => "contacts","ps_name" =>"Контакты")
+  Menu.create("name" => "company","ps_name" =>"About company")
+  Menu.create("name" => "services","ps_name" =>"Service")
+  Menu.create("name" => "contacts","ps_name" =>"Contacts")
+  Menu.create("name" => "exclusive","ps_name" =>"Schematic Design") 
+  Menu.create("name" => "design_project","ps_name" =>"Design Project")
+  Menu.create("name" => "architecture","ps_name" =>"Architectural and Engineering Design")
+  Menu.create("name" => "industrial","ps_name" =>"Indastrial Design") 
+  
  
  
-  Gallery.create("name"=>"architecture","ps_name" =>"Архитектура")
-  Gallery.create("name"=>"design","ps_name" =>"Дизайн интерьера")
-  Gallery.create("name"=>"industrial","ps_name" =>"Промышленный дизайн")
+  Gallery.create("name"=>"architecture","ps_name" =>"Architecture")
+  Gallery.create("name"=>"design","ps_name" =>"Interior Design")
+  Gallery.create("name"=>"industrial","ps_name" =>"Indastrial Design")
 
   Setting.create()
   
@@ -28,60 +29,75 @@
 #   colors
   
   
-  Color.create(:name => "Светлые тона")
-  Color.create(:name => "Средняя Гамма")
-  Color.create(:name => "Темные тона")
-  Color.create(:name => "Контраст")
-  Color.create(:name => "Не уверен")
+  Color.create(:name => "In light tones")
+  Color.create(:name => "In moderate tones")
+  Color.create(:name => "In dark tones")
+  Color.create(:name => "The Contrasts")  
+  Color.create(:name => "Warm tones (Beige, red, yellow)")
+  Color.create(:name => "Cool shades (light blue, dark blue, purple)")  
+  Color.create(:name => "Restrained, laconic (color)")  
+  Color.create(:name => "Bright, cheerful combination")  
+  Color.create(:name => "Not sure")
   
 # forms
   
-  Form.create(:name => "Массивные, основательные формы")
-  Form.create(:name => "Лёгкие, воздушные конструктивы")
-  Form.create(:name => "Не уверен")
+  Form.create(:name => "Massive, solid forms")
+  Form.create(:name => "Light, airy constructs")
+  Form.create(:name => "Complex, multipart forms")
+  Form.create(:name => "Simple lines, no nonsense")  
+  Form.create(:name => "Traditional, classic solutions")  
+  Form.create(:name => "Modern")
+  Form.create(:name => "Mixed")  
+  Form.create(:name => "Not sure")
   
 # materials
   
-  Material.create(:name => "Только натуральные, экологические материалы")
-  Material.create(:name => "В зависимости от помещений")
-  Material.create(:name => "Не уверен")
+  Material.create(:name => "Only natural, ecological materials")
+  Material.create(:name => "Depending on the premises")
+  Material.create(:name => "Not sure")
   
   
 #floors
   
-  Floor.create(:name => "Многоэтажное")
-  Floor.create(:name => "Одноэтажное")
-  Floor.create(:name => "Цокольный уровень")
-  Floor.create(:name => "Подземный уровень")
+  Floor.create(:name => "High-rise")
+  Floor.create(:name => "one-story building")
+  Floor.create(:name => "Ground level")
+  Floor.create(:name => "Underground level")
   
   
   #engineerings
   
-  Engineering.create(:name => "Водопровод, канализация")
-  Engineering.create(:name => "Кондиционирование")
-  Engineering.create(:name => "Отопление")
-  Engineering.create(:name => "Электрические сети")
-  Engineering.create(:name => "Слаботочные сети")
+  Engineering.create(:name => "Water supply, sewerage")
+  Engineering.create(:name => "Air Conditioning")
+  Engineering.create(:name => "Heating")
+  Engineering.create(:name => "Electrical networks")
+  Engineering.create(:name => "Low voltage network")
   
   
   #epc (example picture checks)
   
-  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
-  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
-  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
-  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
-  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
-  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
-  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
-  Epc.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epc.create(:name => "pic1",:image => "/img_chose/001.jpg")
+  Epc.create(:name => "pic1",:image => "/img_chose/002.jpg")
+  Epc.create(:name => "pic1",:image => "/img_chose/003.jpg")
+  Epc.create(:name => "pic1",:image => "/img_chose/004.jpg")
+  Epc.create(:name => "pic1",:image => "/img_chose/005.jpg")
+  Epc.create(:name => "pic1",:image => "/img_chose/006.jpg")
+  Epc.create(:name => "pic1",:image => "/img_chose/007.jpg")
+  Epc.create(:name => "pic1",:image => "/img_chose/008.jpg")
+  Epc.create(:name => "pic1",:image => "/img_chose/009.jpg")
+  Epc.create(:name => "pic1",:image => "/img_chose/010.jpg")
   
     #epcbad (example picture checks bad)
   
-  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
-  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
-  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
-  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
-  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
-  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
-  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
-  Epcbad.create(:name => "pic1",:image => "/images/ohoopee1.jpg")
+  Epcbad.create(:name => "pic1",:image => "/img_chose/001.jpg")
+  Epcbad.create(:name => "pic1",:image => "/img_chose/002.jpg")
+  Epcbad.create(:name => "pic1",:image => "/img_chose/003.jpg")
+  Epcbad.create(:name => "pic1",:image => "/img_chose/004.jpg")
+  Epcbad.create(:name => "pic1",:image => "/img_chose/005.jpg")
+  Epcbad.create(:name => "pic1",:image => "/img_chose/006.jpg")
+  Epcbad.create(:name => "pic1",:image => "/img_chose/007.jpg")
+  Epcbad.create(:name => "pic1",:image => "/img_chose/008.jpg")
+  Epcbad.create(:name => "pic1",:image => "/img_chose/009.jpg")
+  Epcbad.create(:name => "pic1",:image => "/img_chose/010.jpg")
+  
+ 

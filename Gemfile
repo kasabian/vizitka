@@ -6,8 +6,8 @@ gem 'rails', '3.2.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-#  gem 'pg'
-#    gem 'sqlite3'
+#    gem 'pg'
+
    gem 'mysql2'
 gem 'rails-backbone'
 gem 'carrierwave'
@@ -16,6 +16,8 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'cancan'
 gem 'nested_form'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 
 

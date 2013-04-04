@@ -1,0 +1,386 @@
+      <div class = "head_table">
+         <h3> <img src ="/images/r.png" >Restaurant</h3>
+         <h3> Appointment of premises and the number of people:</h3>
+       </div>
+   
+      
+        <% customer.restaurants.all.each do |rest| %>
+         <div class = "forms_fild">
+         <table>
+           <tr>
+             <td>
+               <b>The proposed name</b> 
+               <%=text_none rest.name %>                
+             <td/>
+           </tr>
+           
+           <tr>
+             <td>
+               <b>Number of storeys</b> 
+               <%= text_none rest.number_storeys %> , 
+               
+              <b>Level restaurant on the floors:</b> 
+               <%=text_none rest.level_restaurent %> ,
+               
+               <b>There is a separate</b>
+               <%= yes_no rest.separate %>;
+                           
+             <td/>
+           </tr>
+           
+           <tr>
+             <td>
+               <b>Total area:</b>
+               <%=text_none rest.total_area %>  sq.m.;
+               
+               <b>From them service spaces :</b> 
+               <%=text_none rest.service_spaces %>;
+               
+               <b> the entrance of the parking zone</b>
+               <%= yes_no rest.zone_parking %>;
+                            
+             <td/>
+           </tr>
+           
+           <tr>
+             <td class = "border_top">
+               <b>Hall-reception:</b> 
+               <%=yes_no rest.hall_reception %>;
+               
+               <%=text_none rest.reception_count %> pcs.,
+               
+               <b> Area for children </b>
+               <%=yes_no rest.children_area %>;  
+               
+               <b>Wardrobe for</b> 
+                <%=text_none rest.wardrobe %> visitors,
+                
+               <b>A Bathroom</b>
+               <%= yes_no rest.reception_bathroom %>;
+               
+               
+             </td>
+           </tr>
+           
+            <tr>
+             <td class = "border_top">
+               <b>The main hall for:</b>
+               <%=yes_no rest.main_hall %>;              
+               <%=text_none rest.main_persons %> persons,
+               
+                             
+               <b> quantity:</b> 
+                <%=text_none rest.main_quantity %> premises,
+                
+               <b>A Bathroom</b>
+               <%=yes_no rest.main_bathroom %>;
+               
+               
+             </td>
+           </tr>
+           
+           
+           <tr>
+             <td>
+               <b>The main hall for:</b>
+               <%=text_none rest.main_places %> places,
+               
+               <b>Showcases for products:</b>
+               <%=yes_no rest.main_showcases %>;                
+               <%=text_none rest.main_showcases_str %>,
+                             
+ 
+                <b>Scene</b>
+               <%=yes_no rest.main_scene %>;
+              
+               
+             </td>
+           </tr>
+           
+           <tr>
+             <td>
+               <b>bar area:</b> 
+               <%=yes_no rest.main_bar_area_ch %>;               
+               <%=text_none rest.main_bar_area %> places,
+               
+               <b>Aquarium or plants</b>
+               <%=yes_no rest.main_aquarium %>;
+               
+               <b> tv</b>
+               <%=yes_no rest.main_tv %>;
+               
+               
+               <%=text_none rest.main_tv_count %> pcs.,
+                             
+               <b>Terrace</b>
+               <%=yes_no rest.main_terrace %>;
+               
+               
+             </td>
+           </tr>
+           
+           <tr>
+             <td class = "border_top">
+             
+               <b>A separate bar:</b> 
+               <%=yes_no rest.separate %>;               
+               <%=text_none rest.separate_count %> places,
+               
+               <b>chillout</b>
+               <%=text_none rest.separate_chillout%> places,
+               
+            
+               <b> tv</b>               
+               <%=text_none rest.separate_tv %> pcs.,
+                             
+               <b>A Bathroom</b>
+               <%=yes_no rest.separate_bathroom %>;
+               
+               
+             </td>
+           </tr>
+           
+           <tr>
+             <td class = "border_top">
+             
+               <b>banqueting hall</b>
+               <%=yes_no rest.banqueting_hall %>;               
+               <%=text_none rest.banqueting_count %> places,
+             
+               <b>Convertible (tables are moved if necessary)</b>
+               <%=yes_no rest.banqueting_convertible %>;
+               
+               
+             </td>
+           </tr>
+           
+           <tr>
+             <td class = "border_top">
+                     
+               <b>vip hall</b>
+               <%=yes_no rest.vip %>;               
+               <%=text_none rest.vip_count%>person,
+               
+               <b>A Bathroom</b>
+               <%=yes_no rest.vip_bathroom %>;
+               
+               
+               <b>tv</b>
+               <%=yes_no rest.vip_tv %>;
+               
+               
+               <b>Bar</b>
+               <%=yes_no rest.vip_bar %>;
+               
+              
+               <b>Scene</b>
+               <%=yes_no rest.vip_scene %>;
+               
+               
+               <b>Terrace</b>
+               <%=yes_no rest.vip_terrace %>;
+               
+               
+               
+             </td>
+           </tr>
+           
+            <tr>
+             <td class = "border_top">
+                     
+               <b>Outdoor area on the</b>
+               <%=yes_no rest.outdoor %>;               
+               <%=text_none rest.outdoor_count %>places,
+               
+               <b>Tv</b>
+               <%=yes_no rest.outdoor_tv %>;
+               
+               
+               <b>Bar</b>
+               <%=yes_no rest.outdoor_bar %>;
+               
+               
+               <b>Green plantings</b>
+               <%=yes_no rest.outdoor_greenn %>;
+               
+               
+             </td>
+           </tr>
+           
+             <tr>
+             <td class = "border_top">
+              
+               <b>Additionally take into account or to equip:</b>
+               <%=text_none rest.appointment_comment%>
+                
+             </td>
+           </tr>
+           
+         </table>
+        
+      </div>
+      
+      <div class = "forms_fild">
+        <div class = "inner_head_table">
+          <h3>Requirements for service spaces:</h3>
+        </div>
+        <table>
+          <tr>
+            <td>
+            
+               <b>Separate entrance</b>
+               <%=yes_no rest.requir_separate %>;
+               
+             
+               <b>A Bathroom</b>
+               <%=yes_no rest.requir_bathroom %>;
+               
+               
+               <b>Kitchen</b>
+               <%=yes_no rest.requir_kitchen %>; 
+               <%=text_none rest.requir_kitchen_squere %>sq.m.,
+               
+               <b>Must be seen from the area of ​​visitors</b>
+               <%=yes_no rest.requir_visitors %>;
+               
+               
+               <b>Wine cellars</b>
+               <%=yes_no rest.requir_wine %>;
+               
+              
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+            
+               <b>Storage facilities</b>
+               <%=yes_no rest.requir_storge %>;   
+               <%=text_none rest.requir_storge_sq %>sq.m.,
+               
+               <b>quantity:</b>
+               <%=yes_no rest.requir_quantity %>;               
+               <%=text_none rest.requir_quantity_count %>premises,
+               
+               <b>cold room</b>
+               <%=yes_no rest.requir_cold_room %>;
+               
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+               <b>Locker room, rest room for staff</b>
+               <%=yes_no rest.requir_locker_room %>;
+               
+               
+               <b>Shower</b>
+               <%=yes_no rest.requir_shower %>;
+               
+            </td>
+          </tr>
+          
+          <tr>
+            <td class = "border_top">
+            
+               <b>accounts department</b>
+               <%=yes_no rest.requir_accounts %>;
+               
+               
+               <b>Head office of the chief</b>
+               <%=yes_no rest.requir_head_office %>;
+               
+               
+               <b>A Bathroom</b>
+               <%=yes_no rest.requir_head_bathroom %>;
+               
+            </td>
+          </tr>
+          
+           <tr>
+            <td class = "border_top">
+               <b>Premises for security service</b>
+               <%=yes_no rest.requir_sequrity %>;
+               
+               
+               <b>Equipped with a video surveillance system</b>
+               <%=yes_no rest.requir_video %>;
+               
+               
+               <b>A Bathroom</b>
+               <%=yes_no rest.requir_video_bathroom %>;
+               
+            </td>
+          </tr>
+          
+          <tr>
+            <td class = "border_top">
+              
+               <b>Additionally take into account or to equip:</b>
+               <%=text_none rest.requir_comment %>
+            
+            </td>
+          </tr>
+          
+          
+        </table>
+        
+      </div>
+      
+      
+       <div class = "forms_fild">
+
+         <table>
+           <tr>
+             <td>
+               <b> Features of the complex: </b>
+               <b>A separate structure</b>
+               <%=yes_no rest.complex_separate %>;
+               
+               
+               <b>Part of a commercial/residential complex</b>
+               <%=yes_no rest.complex_commercial %>;
+               
+             </td>
+           </tr>
+           
+           <tr>
+             <td class = "border_top">
+               <b> Surrounding area: </b>
+               <b>The central area of the city</b>
+               <%=yes_no rest.complex_central %>;
+               
+               
+               <b>The Suburb</b>
+               <%=yes_no rest.complex_suburb %>;
+               
+               
+               <b>Quay</b>
+               <%=yes_no rest.complex_guay %>;
+               
+             </td>
+           </tr>
+           
+           <tr>
+             <td class = "border_top">
+               <b> Audience: </b>
+               <b>Mainly the local population</b>
+               <%=yes_no rest.complex_mainly %>;
+               
+               
+               <b>Tourism</b>
+               <%=yes_no rest.complex_tourism %>;
+               
+               
+               <b>Mixed</b>
+               <%=yes_no rest.complex_mixed %>;
+               
+             </td>
+           </tr>
+           
+         </table>
+       </div>
+          
+         
+        <%end%>
+        

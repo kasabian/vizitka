@@ -4,7 +4,9 @@
  $("#f").hide()
  $("#b").hide()
  $("#h").hide()
-
+ $("#r").hide()
+ $("#s").hide()
+ 
  add_family_fild = () ->
   str = @value  
   @value = @value.replace(/\D/, '')
@@ -68,9 +70,23 @@
   else
    $("#b").hide()
  
+ change_r_block = () ->
+  if $("#r_chose").is(':checked') == true
+   $("#r").show()
+  else
+   $("#r").hide()
+   
+ change_s_block = () ->
+  if $("#s_chose").is(':checked') == true
+   $("#s").show()
+  else
+   $("#s").hide() 
+ 
  $("#f_chose").bind("click", change_f_block)
  $("#b_chose").bind("click", change_b_block)
  $("#h_chose").bind("click", change_h_block)
+ $("#r_chose").bind("click", change_r_block)
+ $("#s_chose").bind("click", change_s_block)
  
  
  $(".family_count").bind("keyup", add_family_fild)

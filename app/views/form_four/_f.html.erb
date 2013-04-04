@@ -1,0 +1,85 @@
+  <div class = "forms_fild">  
+      <div class ="inner_head_table"> 
+       <img src = "/images/f.png"> <br />dddddd
+       <h3>Residential, private apartment or cottages 
+           Appointment of premises and the number of people :</h3>
+      </div>
+      <b> Family of:</b> <%= customer.familys.length%> <br />
+   
+  </div>
+  
+   
+   <div class = "head_table">
+     <h3>List the gender, age and marital status of each household member: </h3>  
+   </div>
+   
+   <%family_count = 0%>
+   <%customer.familys.each do |f|%> 
+   <%family_count=family_count+1;%>
+   
+     <div class = "forms_fild">
+        <i><%=family_count%>. </i><br /><br />
+       <table>
+       
+       
+         <tr>
+           <td>  
+              <b>Name:</b>
+           </td>
+           <td>  
+             <%= f.name%>
+           </td>
+         </tr>
+         
+         
+         <tr>
+           <td>  
+              <b>Family status:</b>
+           </td>
+           <td>  
+             <%= f.status%>
+           </td>
+         </tr>
+         
+           <tr>
+           <td>  
+              <b>Age:</b>
+           </td>
+           <td>  
+             <%= f.age%>
+           </td>
+         </tr>
+         <tr>
+           <td>
+             <b> Special notes:</b>
+             <%= f.comment%>
+           </td>  
+         </tr>  
+         
+       </table>
+       
+     </div>
+  <%end%> 
+  
+  
+  
+  <div class = "head_table">
+    <h3>Staff and visitors:</h3>
+  </div>
+  
+  <div class = "forms_fild">
+   <i>4.1</i><br>
+    <b>Additional staff of:</b> <%=customer.personal_count%> people <br /> <br />
+    <b>Domiciliary:</b> <%=customer.personal_type%>
+    
+  </div>
+  
+  
+  <div class = "forms_fild">
+    <i>4.2</i><br>
+    <b>Guests in my house:</b> <%=customer.guest_type%> <br /> <br />
+    <b>The maximum number of guests at a time:</b> <%=customer.guest_max%> <br /> <br />
+    <b>Of them can sometimes stay overnight:</b> <%=customer.guest_night%> <br /> <br />
+  </div>
+  
+  

@@ -6,6 +6,7 @@ class FormOneController < ApplicationController
     respond_to do |format|
       format.html 
       format.json { render json: @customer }
+      
     end
   end
 
@@ -20,13 +21,28 @@ class FormOneController < ApplicationController
     @customer.check_fild params, @customer.epcbads, Epcbad, "epcbad_"
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to home_index_path, notice: 'Ok' }
+	a = Customer.find_by_id(@customer)
+	Mailer.send_email(a).deliver
+	
+        format.html {render "show"}
         format.json { render json: @customer, status: :created, location: @customer }
+	
       else
         format.html { render action: "index" }
         format.json { render json: @customer.errors, status: :unprocessable_entity }
       end
     end  
   end
+  
+  def show
+    @customer = Customer.find_by_id(params[:id])
+    respond_to do |format|
+      format.html 
+      format.json { render json: @customer }
+      format.pdf   {  render :pdf => "order_#{@customer.id}", :header => { :right => '[page] of [topage]' },  :dpi => '5000' }
+    end
+    
+  end  
+  
   
 end
