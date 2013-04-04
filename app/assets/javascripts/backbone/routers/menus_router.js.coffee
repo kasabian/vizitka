@@ -86,7 +86,7 @@ class Vizitka.Routers.MenusRouter extends Backbone.Router
   
   industrial: ->
    $(".order").hide()
-   str = "<a href = '/form_two'> Fill in the application form “Industrial Design”</a>"
+   str = "<a href = '#industrial'> Fill in the application form “Industrial Design”</a>"
    $("#order").html(str);
    @close_side(@menus.where({"name":"industrial"})[0])
    @open_side() 

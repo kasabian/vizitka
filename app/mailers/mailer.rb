@@ -5,6 +5,9 @@ class Mailer < ActionMailer::Base
     @customer = customer
     @url  = "http://example.com/login"
     @setting = Setting.first
-    mail(:to => @setting.email, :subject => "New order")
+    mails = []
+    mails.push(@setting.email)
+    mails.push(@setting.email2)
+    mail(:to => mails, :subject => "New order")
   end
 end

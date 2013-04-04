@@ -1391,7 +1391,7 @@
           <table>
            <tr>
              <td><%= pic.label 'Select image' %></td>
-             <td><%= pic.file_field :image, :length => 1, :accept => "image" %></td> 
+             <td><%= pic.file_field :image, :length => 1, :accept => "image",:required => "required" %></td> 
            </tr>
            <tr>      
               <td><%= pic.label 'Your comment to the picture :' %></td>

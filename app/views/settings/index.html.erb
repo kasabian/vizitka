@@ -11,6 +11,11 @@
     <%= f.label "Email (Почта куда будут приходить письма)" %>
     <%= f.email_field :email,:class => "input-xxlarge", :required=>"required" %>
   </div>
+  
+  <div class="field">
+    <%= f.label "Email2 (Почта куда будут приходить письма)" %>
+    <%= f.email_field :email2,:class => "input-xxlarge", :required=>"required" %>
+  </div>
   <div class="actions">
     <%= f.submit "Применить",:class=>"btn btn-inverse " %>
   </div>

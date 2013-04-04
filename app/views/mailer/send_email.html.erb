@@ -1,7 +1,7 @@
 <h1>New order №<%=@customer.id%><h1/><br />
 
 <%if @customer.engineerings.all.length!=0 then%> 
- link to order: <a href = "http://pure-fortress-3308.herokuapp.com/form_one/<%=@customer.id%>"> http://pure-fortress-3308.herokuapp.com/form_one/<%=@customer.id%></a>
+ link to order: <a href = "http://www.pure-fortress-3308.herokuapp.com/form_one/<%=@customer.id%>"> pure-fortress-3308.herokuapp.com/form_one/<%=@customer.id%></a>
 <%else %> 
-  link to order: <a href = "http://pure-fortress-3308.herokuapp.com/form_four/<%=@customer.id%>"> http://pure-fortress-3308.herokuapp.com/form_four/<%=@customer.id%></a>
+  link to order: <a href = "http://www.pure-fortress-3308.herokuapp.com/form_four/<%=@customer.id%>"> pure-fortress-3308.herokuapp.com/form_four/<%=@customer.id%></a>
 <%end%>  
