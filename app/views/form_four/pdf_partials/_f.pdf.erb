@@ -1,0 +1,106 @@
+  <div class = "pdf_fild">  
+    
+    <%= wicked_pdf_image_tag "/images/f.png" %> <br />
+      <div class ="inner_head_table"> 
+       <h3>Residential, private apartment or cottages 
+           Appointment of premises and the number of people :</h3>
+      </div>
+      <b> Family of:</b> <%= customer.familys.length%> <br />
+   
+  </div>
+  
+   
+   <div class = "head_table">
+     <h3>List the gender, age and marital status of each household member: </h3>  
+   </div>
+   
+   <%family_count = 0%>
+   <%customer.familys.each do |f|%> 
+   <%family_count=family_count+1;%>
+   
+     <div class = "pdf_fild">
+       <i>number of list: <%=family_count%> </i><br /><br />
+       <table>
+       
+       
+         <tr>
+           <td>  
+              <b>Name:</b>
+           </td>
+           <td>  
+             <%= f.name%>
+           </td>
+         </tr>
+         
+         
+         <tr>
+           <td>  
+              <b>Family status:</b>
+           </td>
+           <td>  
+             <%= f.status%>
+           </td>
+         </tr>
+         
+           <tr>
+           <td>  
+              <b>Age:</b>
+           </td>
+           <td>  
+             <%= f.age%>
+           </td>
+         </tr>
+         <tr>
+           <td>
+             <b> Special notes:</b>
+             <%= f.comment%>
+           </td>  
+         </tr>  
+         
+       </table>
+       
+     </div>
+     
+     --------------------------------------------------------------------------------------------- <br />
+     
+  <%end%> 
+  
+  
+  
+  <div class = "head_table">
+    <h3>Staff and visitors:</h3>
+  </div>
+  
+  <div class = "pdf_fild">
+   <i>4.1</i><br>
+    <table>
+     <tr>
+       <td> <b>Additional staff of:</b> <%=customer.personal_count%> people </td>
+     </tr>
+     
+     <tr>
+       <td> <b>Domiciliary:</b> <%=customer.personal_type%> </td>
+     </tr>
+    </table>
+  </div>
+  
+  
+  <div class = "pdf_fild">
+    <i>4.2</i><br>
+    <table>
+      <tr>
+        <td><b>Guests in my house:</b> <%=customer.guest_type%> </td>
+      </tr> 
+      
+      <tr>
+         <td><b>The maximum number of guests at a time:</b> <%=customer.guest_max%> </td>
+      </tr>
+      
+      <tr>
+         <td><b>Of them can sometimes stay overnight:</b> <%=customer.guest_night%> <t/d>
+      </tr>
+    
+    </table>
+  </div>
+  
+  

@@ -52,16 +52,16 @@
     {
     height: 250px;
     margin-right: 23px;
-    margin-top: 222px;
+    margin-top: 260px;
     padding-top: 10px;
     position: absolute;
-    width: 210px;
-    margin-left: -40px;
+    width: 230px;
+    margin-left: -80px;
   }
   
   #left_side  .pod_left_menu ul
     {
-	color: #92D050;
+	color: #27D951;
     font-size: 16px;
     list-style: none outside none;
     margin-right: 50px;
@@ -72,7 +72,7 @@
   
   #left_side  .pod_left_menu ul li
     {
-	color: #92D050;
+	color: #27D951;
     font-family: Arial;
     font-size: 16px;
     list-style: none outside none;
@@ -110,12 +110,12 @@
   
    #right_side .menu_text
     {
-	color: #92D050;
+	color:#27D951;
     font-family: Arial;
     font-size: 16px;
     padding-right: 35px;
-    padding-top: 40px;
-    text-align: right;
+    padding-top: 50px;
+    text-align: left;
   }
   
   
@@ -123,7 +123,7 @@
     {
     height: 184px;
     margin-left: 135px;
-    margin-top: 300px;
+    margin-top: 285px;
     padding-left: 0;
     position: absolute;
     width: 106px;
@@ -131,7 +131,7 @@
   
   #left_side .left_menu_box ul
      {
-	color: #92D050;
+	color:#27D951;
     font-family: Arial;
     font-size: 20px;
     list-style: none outside none;
@@ -192,7 +192,7 @@
   
   .left_line
     {
-	background-color: #92d050;
+	background-color: #27D951;
     height: 580px;
     margin-left: 300px;
     margin-top: -40px;
@@ -201,7 +201,7 @@
   }
     .right_line
     {
-	background-color: #92d050;
+	background-color: #27D951;
     height: 580px;
     margin-left: 0px;
     margin-top: -40px;
@@ -227,7 +227,7 @@
 	
  #left_side a
   {
-     color:#92D050;
+     color:#27D951;
      text-decoration: none;
   }
   
@@ -258,13 +258,44 @@ outline: none;
   
   #order
   {
-    color: #92D050;
+    color: #27D951;
     font-size: 10px;
     font-weight: bold;
-    margin-left: 160px;
-    margin-top: 13px;
+    margin-left: 130px;
+    margin-top: 35px;
     position: absolute;
     width: 130px;
     text-shadow: 1px 2px 6px black;
+    text-align:right;
     
+  }
+  
+  
+  .order
+  {
+    color: #27D951;
+    font-size: 10px;
+    font-weight: bold;
+    text-shadow: 1px 2px 6px black;
+    margin-left:125px;
+  }
+  
+  .order_text
+  {
+    width: 130px;
+    text-align:right;
+    padding-top: 30px;
+    font-size: 10px;
+  }
+  
+  .order_text a
+  {
+    color: #27D951;
+  }
+  
+  
+ .logo img 
+  {
+    height: 60px;
+    width: 150px;
   }

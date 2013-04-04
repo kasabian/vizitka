@@ -6,13 +6,15 @@
     <%= f.label "Название сайта" %>
     <%= f.text_field :name,:class => "input-xxlarge" %>
   </div>
-  <div class="field">
-    <%= f.label "Теги для сайта (по одному через запятую)" %>
-    <%= f.text_field :tag,:class => "input-xxlarge" %>
-  </div>
+
   <div class="field">
     <%= f.label "Email (Почта куда будут приходить письма)" %>
     <%= f.email_field :email,:class => "input-xxlarge", :required=>"required" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Email2 (Почта куда будут приходить письма)" %>
+    <%= f.email_field :email2,:class => "input-xxlarge", :required=>"required" %>
   </div>
   <div class="actions">
     <%= f.submit "Применить",:class=>"btn btn-inverse " %>

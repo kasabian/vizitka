@@ -1,0 +1,171 @@
+
+        <div class = "head_table">
+          <h3> <img src = "/images/h.png"> Apartment, hotel or apartment for rent</h3>
+        </div> 
+        
+        <div class = "head_table" style = "margin-bottom: 20px;">
+         <p><b> Number of standard rooms for individual apartments: </b> <%= customer.apartments.length%> <br />
+         
+          List the major elements required in every room:</p>
+       </div>
+  
+        <%apartment_count = 0%>   
+ 
+        <% customer.apartments.all.each do |apartment| %>
+        <%apartment_count = apartment_count+1%> 
+         <div class = "apartments_filds">
+          <div class = "forms_fild"> 
+           <div class = "inner_head_table">
+             <h3><i>apartment number of: <%= apartment_count%> </i></h3></br>
+           </div> 
+           
+              <table>
+                <tr>
+                  <td> <b>Apartment:</b> <%= apartment.a_name %> </td>             
+                </tr>
+                <tr>
+                  <td><b>Area:</b> <%= apartment.squere %> sq.m. </tr>
+                </tr>             
+             </table>  
+             
+<!--       ##########################################        -->
+            
+           <% apartment.rooms.all.each do |room| %>
+            <div class ="top_line">
+              <table>
+                <tr>
+                  <td>
+                    <b>Room:</b>
+                  </td> 
+                  <td>
+                  <%= room.room_name %>  
+                  <%= room.room_squere %> sq.m. <br />
+                  </td>
+                 </tr>
+                 
+                 <tr>
+                   <td>                     
+                     <b>double bed:</b>
+                     <%= yes_no room.double_beds %>; 
+                    </td>
+                    <td>                     
+                     <b>two single beds:</b>
+                     <%= yes_no room.two_twin_bads %>;
+                    </td>
+                  <tr>
+                   
+                 <tr>
+                  <td>                   
+                   <b>TV:</b>
+                   <%= yes_no room.tv %>;
+                  </td>
+                  
+                  <td>                    
+                    <b>Bar:</b>
+                    <%= yes_no room.bar %>;
+                  </td>
+                 </tr>
+                 
+                 <tr>
+                  <td>                  
+                   <b>armchair:</b>
+                   <%= yes_no room.chair %>;                   
+                   <%= room.chair_count %> pcs.
+                   
+                  </td>
+                  
+                  <td>                    
+                    <b>sofa:</b>
+                    <%= yes_no room.sofa %>;  
+                      
+                    <%= room.sofa_count %> pcs.
+                  </td> 
+                </tr>
+                <tr> 
+                
+                  <td>
+                    <b>desk:</b>
+                    <%=yes_no room.desk %>;
+                  </td>
+                  
+                  <td>
+                    <b> wardrobe: </b>
+                    <%=yes_no room.cupboard %>;                   
+                  </td> 
+                </tr> 
+              
+                <tr>
+                 <td>
+                   <b>chairs:</b>
+                   <%=yes_no room.stool%>;
+                  
+                  
+                  <%= room.stool_count %> pcs.
+                 </td>
+                 <td>
+                   <b> WC:</b>
+                   <%=yes_no room.wc %>;
+                   
+                   <%= room.wc_squere %> sq. m.
+                 </td>  
+                </tr> 
+                <tr>
+              
+                  <td>
+                    <b>isolated:</b>
+                  </td>
+                  
+                  <td>
+                    <%= yes_no room.isolation %>
+                  </td>
+              
+                </tr>
+                
+                <tr>
+                 <td><b>dressing room:</b></td>
+                 <td><%=yes_no room.dressing_room %></td>
+                </tr>
+                
+                <tr>
+                 <td><b>coffee table:</b></td> 
+                 <td><%= yes_no room.coffee_table %>;</td>
+                </tr>
+                <tr>
+                 <td><b>dining table:</b></td>
+                 <td><%= yes_no room.dining_table %>;</td> 
+                </td> 
+                
+                 <tr>
+                   <td>
+                    <b>Other:</b>
+                    <%= yes_no room.other %>;
+                    
+                   </td>
+                   <td> 
+                    <%= room.other_fild %>
+                   </td> 
+                 </tr>
+                 
+                  <tr>
+                   <td> <b>Notes:</b></td>
+                   <td><%= room.comment %></td>
+                  </tr>
+                    
+                    
+                
+              </table>  
+              
+            </div>  
+           <%end%> 
+             
+                
+<!--      ##########################################            -->
+                
+                
+
+         </div> 
+        </div> 
+       <%end%> 
+       
+         
+   

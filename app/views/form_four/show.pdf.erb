@@ -1,0 +1,313 @@
+ <DOCUMENT html>
+   <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <%= wicked_pdf_stylesheet_link_tag "pdf" -%>
+     <%= wicked_pdf_stylesheet_link_tag "reg" -%>
+  
+     
+   </head>
+   <body>
+  
+   <%=wicked_pdf_image_tag "/logo.png", :width => "150" %>   
+   
+ <div class = "head">
+   <h3>Order № <%= @customer.id%></h3>
+ </div>
+ 
+
+ 
+<!--  #################################################################### -->
+ <div class = "head_table">
+  <h3>Section 1. Contact information</h3>
+ </div>
+ <div class = "pdf_fild">
+    <table>
+      <tr>
+        <td>
+          <b>Your name:</b>
+        </td>
+        <td>
+          <%= @customer.name %>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <b>Method of communication 1:</b>
+        </td>
+        <td>          
+          <%= @customer.tel1 %>;
+          <%= @customer.mail1 %>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <b>Method of communication 2:</b>
+        </td>
+        <td>          
+          <%= @customer.tel2 %>;
+          <%= @customer.mail2 %>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <b>Object address:</b>
+        </td>
+        <td>          
+          <%= @customer.address%>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <b>The short name of the object: </b>
+        </td>
+        <td>          
+          <%= @customer.short_title%>
+        </td>
+      </tr>
+    </table>
+ 
+ </div>
+ 
+<!--  #################################################################### -->
+ 
+  <div class = "head_table">
+    <h3>Section 2. General information</h3>
+  </div>
+  
+  <div class = "pdf_fild">
+   <div class = "inner_head_table">
+    <h3>1. Specify the type of the building in which the premises are located:</h3>
+  </div>   
+   <table>
+      <tr>
+         <td>
+           <% @customer.floors.all.each do |floor|%>
+             <%= floor.name%>;
+           <%end%>
+         </td>
+      </tr>
+      
+      <tr>
+         <td>
+           <b>Number of floors:</b>
+         </td>         
+         <td>
+            <%= @customer.count_floors%>           
+         </td>
+      </tr>
+      
+      <tr>
+         <td>
+           <b>On which floor is the object:</b>
+         </td>         
+         <td>
+            <%= @customer.curent_floor%>           
+         </td>
+      </tr>
+      
+      <tr>
+         <td>
+           <b>2.The total area of the object:</b>
+         </td>         
+         <td>
+            <%= @customer.total_area%>sq.m.           
+         </td>
+      </tr>
+       <tr>
+         <td>
+           <b>3.If not all of the developed area, specify the projected:</b>
+         </td>         
+         <td>
+            <%= @customer.design_area%> sq.m.          
+         </td>
+      </tr>
+      
+   </table>
+   
+  </div>
+<!--  #################################################################### --> 
+  
+   <%= (render "form_four/pdf_partials/f.pdf.erb", :customer => @customer) if @customer.f_chose == true %>  
+   <%= (render "form_four/pdf_partials/h.pdf.erb", :customer => @customer) if @customer.h_chose == true %>
+   <%= (render "form_four/pdf_partials/b.pdf.erb", :customer => @customer) if @customer.b_chose == true %>
+   <%= (render "form_four/pdf_partials/r.pdf.erb", :customer => @customer) if @customer.r_chose == true %>
+   <%= (render "form_four/pdf_partials/s.pdf.erb", :customer => @customer) if @customer.s_chose == true %>
+<!--  #################################################################### -->
+  
+ <div class = "head_table">
+    <h3>Section 3. Shape and color</h3>
+ </div>
+ <div class = "pdf_fild">
+    <div class = "inner_head_table">
+     <h3>Indicate your preferences:</h3>
+   </div>
+   <table>
+      <tr>
+         <td>
+           <b>colors:</b>
+         </td>
+      </tr>      
+      
+      <tr>
+         <td>
+           <% @customer.colors.all.each do |color|%>
+             <%= color.name%>;
+           <%end%>
+         </td>
+      </tr>
+      
+      
+      <tr>
+         <td>
+           <b>forms:</b>
+         </td>
+      </tr>      
+      
+      <tr>
+         <td>
+           <% @customer.forms.all.each do |form|%>
+             <%= form.name%>;
+           <%end%>
+         </td>
+      </tr>
+      <tr>
+         <td>
+           <b>materials:</b>
+         </td>
+      </tr>      
+      
+      <tr>
+         <td>
+           <% @customer.materials.all.each do |m|%>
+             <%= m.name%>;
+           <%end%>
+         </td>
+      </tr>
+      
+      <tr>
+         <td>
+           <b>Special wishes:</b>
+         </td>
+      </tr>      
+      
+      <tr>
+         <td>
+           <%= @customer.wishes_color%>
+         </td>
+      </tr>
+      
+      
+   </table>
+  </div>
+ 
+ <!--  #################################################################### -->
+ 
+ 
+   <br>
+  <br>
+ 
+ <!--  #################################################################### -->
+ 
+ <div class = "head_table">
+    <h3>Section 4. Examples of solutions</h3>
+ </div>
+ <div class = "pdf_fild img_pdf_fild">
+   <div class="inner_head_table">
+      <h3>pictures like</h3>
+   </div> 
+  
+   <div style = "min-height:100px;">      
+     <%@customer.epcs.all.each do |epc|%>
+        <div style = "float:left; margin:5px;">
+        
+                <%= wicked_pdf_image_tag(epc.image,:width => "150") %> <br />
+
+        </div> 
+      <%end%>   
+   </div>  
+  
+  
+  </div>
+  
+ 
+  <!--  #################################################################### -->
+ 
+ <div class = "pdf_fild img_pdf_fild">
+   <div class="inner_head_table">
+      <h3>pictures not like</h3>
+   </div> 
+  
+   <div style = "min-height:100px;">      
+     <%@customer.epcbads.all.each do |epc|%>
+        <div style = "float:left; margin:5px;">
+        
+          <%= wicked_pdf_image_tag(epc.image,:width => "150") %> <br />
+
+        </div> 
+      <%end%>   
+   </div>  
+  
+  
+  </div>
+ <!--  #################################################################### -->
+ 
+ 
+ <br><br>
+  <!--  #################################################################### -->
+ 
+
+ <div class = "pdf_fild  img_pdf_fild">
+   <div class = "inner_head_table">
+    <h3>download pictures</h3>
+ </div>
+   <div style = "min-height:300px;"> 
+    <table style = "text-align:center;">
+       <tr>
+         <td> 
+          <b> picture</b>
+         </td>
+         <td>
+          <b style = "padding: 0px 30px 30px 30px;"> comment </b>
+         </td>
+         <td>
+           <b> other link </b>
+         </td>
+       </tr>
+     <%@customer.examplepics.all.each do |epc|%>
+        <div style = "float:left; margin:5px;">
+          
+            <tr>
+               <td>
+                   
+                     <%=wicked_pdf_image_tag(epc.image.url ,:width => "150") %>
+
+               </td>
+               <td style = "padding: 30px;">
+                 <%=epc.comment%>
+               </td>
+               <td>
+                <%=epc.link%> 
+               </td>
+            </tr>
+         
+        </div> 
+      <%end%> 
+     </table>
+  </div>  
+</div>
+ 
+ 
+
+<!--  #################################################################### -->
+
+
+
+<!--  #################################################################### --> 
+   
+
+   </body>
+ </html>
